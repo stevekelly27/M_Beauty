@@ -20,14 +20,14 @@ class Service(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     service_type = models.CharField(
-        max_length=10,
+        max_length=20,
         choices=ServiceType.choices,
     )
     price = models.DecimalField(
         max_digits=5,
         decimal_places=2,
-        validators=[MinValueValidator(Decimal('15.00')),
-                    MaxValueValidator(Decimal('300.00'))]
+        validators=[MinValueValidator(Decimal('12.00')),
+                    MaxValueValidator(Decimal('250.00'))]
         )
 
     def __str__(self):
