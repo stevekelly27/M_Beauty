@@ -10,16 +10,16 @@ def services(request):
     Services filtered by service type.
     """
 
-    cut_services = Service.objects.filter(
+    gel_nail_services = Service.objects.filter(
         service_type__contains='GEL').order_by('name')
-    colour_services = Service.objects.filter(
+    shellac_services = Service.objects.filter(
         service_type__contains='SHELLAC').order_by('name')
-    style_services = Service.objects.filter(
-        service_type__contains='BROW').order_by('name')
-    style_services = Service.objects.filter(
-        service_type__contains='WAX').order_by('name')
+    brow_services = Service.objects.filter(
+        service_type__contains='BROWS').order_by('name')
+    henna_brow_services = Service.objects.filter(
+        service_type__contains='HENNA').order_by('name')
     return render(request, 'services/services.html', {
-        'gel_nails': cut_services,
-        'shellac': shellac,
-        'eyebrows': eyebrows,
-        'waxing': waxing,})
+        'gel_nail_services': gel_nail_services,
+        'shellac_services': shellac_services,
+        'brow_services': brow_services,
+        'henna_brow_services': henna_brow_services, })

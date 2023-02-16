@@ -3,9 +3,14 @@ html {
 }
 
 body {
-    font-family: 'Lato';
-    height: calc(100vh - 150px);
+    background: url('/media/stars.jpeg') no-repeat center center fixed;
+    background-size: cover;
 } 
+
+.header-container {
+    height: 150px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -35,3 +40,6 @@ body {
 
 }
 
+#opacity; {
+    opacity: 0.9;
+}
