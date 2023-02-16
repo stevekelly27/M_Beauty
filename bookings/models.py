@@ -33,7 +33,7 @@ class Booking(models.Model):
         validators=[validate_date]
         )
 
-    time = models.IntegerField(choices=TIMESLOT_LIST)
+    time = models.IntegerField(choices=TIME_LIST)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     service = models.ForeignKey(
