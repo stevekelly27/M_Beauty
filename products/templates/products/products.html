@@ -36,6 +36,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <span class="float-right">
+
+                                <!-- Stock indicator -->
+                                {% if product.in_stock %}
+            
+                                    <i class="fa-regular fa-square-check fa-sm text-success"></i> {{product.stock_level}} in stock
+            
+                                {% else %}
+            
+                                    <i class="fa-regular fa-rectangle-xmark fa-sm text-danger"></i> Out of Stock
+            
+                                {% endif %}
+                            </span>
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:1 %}

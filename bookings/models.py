@@ -46,7 +46,7 @@ class Booking(models.Model):
     def __str__(self):
         """
         Method to display booking instance by date, time and stylist.
-        """
+        """ 
         return f'{self.date} {self.get_time_display()}'
 
     class Meta:
@@ -64,4 +64,3 @@ class Booking(models.Model):
         today = date.today()
         if self.date < today:
             return True
-

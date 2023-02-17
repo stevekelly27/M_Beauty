@@ -33,13 +33,13 @@ body {
 } 
 
 .nav-link {
-    font-size: 25px;
+    font-size: 20px;
     text-align: right;
     margin-top: 20px;
     color: white;
 
 }
 
-#opacity; {
+#opacity {
     opacity: 0.9;
 }
