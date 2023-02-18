@@ -42,6 +42,7 @@ class Booking(models.Model):
         )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="timeslot")
+    # paid = models.CharField(max_length=30, default=False)
 
     def __str__(self):
         """
