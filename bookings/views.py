@@ -55,5 +55,4 @@ def add_bookings(request):
                 'Request unsuccessful - address errors',
                 extra_tags='unsuccessful_request'
                 )
-            return render(request, 'bookings/bookings.html', context)
-
+            return render(request, 'bookings/add_bookings.html', context)

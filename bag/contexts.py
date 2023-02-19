@@ -12,13 +12,13 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
     in_stock = True
 
-    for item_id, item_data in bag.items():
+    for product_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=product_id)
             total += item_data * product.price
             product_count += item_data
             bag_items.append({
-                'item_id': item_id,
+                'product_id': product_id,
                 'quantity': item_data,
                 'product': product,
             })
