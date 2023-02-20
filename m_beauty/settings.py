@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'services',
     'bookings',
     'bag',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
+                'django.template.context_processors.media',
             ],
         },
     },

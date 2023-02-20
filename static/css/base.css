@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/stars.jpeg') no-repeat center center fixed;
+    background: url('/media/images/stars.jpeg') no-repeat center center fixed;
     background-size: cover;
 } 
 
@@ -20,12 +20,8 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
-.main-logo-link {
-    width: fit-content;
+.logo {
+    width:100px;
 }
 
 #navbar {
@@ -42,4 +38,18 @@ body {
 
 #opacity {
     opacity: 0.9;
+}
+
+.carousel-container {
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-inner > .carousel-item > img {
+    width: 100%;
+    margin: auto;
+}
+
+.card-img-top {
+
 }
