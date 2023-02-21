@@ -34,7 +34,7 @@ def add_bookings(request):
     displayed.
     """
     if request.method == 'POST':
-        
+
         form = BookingForm(request.POST)
         context = {
             'form': form
@@ -59,8 +59,7 @@ def add_bookings(request):
 
     else:
         form = BookingForm
-    context = {
-        'form': form
-    }
-    return render(request, 'bookings/add_bookings.html', context)
-
+        context = {
+            'form': form
+        }
+    return render(request, 'bookings/bookings.html', context)

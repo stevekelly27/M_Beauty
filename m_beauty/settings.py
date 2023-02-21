@@ -79,6 +79,14 @@ TEMPLATES = [
                 'bag.contexts.bag_contents',
                 'django.template.context_processors.media',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ],
+            'libraries': {
+                'my_templatetag': 'bag.templatetags.bag_tools',
+            
+            }
         },
     },
 ]
