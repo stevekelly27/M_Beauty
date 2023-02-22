@@ -47,7 +47,7 @@
                                     <p class="my-0">${{ item.product.price }}</p>
                                 </td>
                                 <td class="py-3 w-25">
-                                    <form class="form update-form" method="POST" action="">
+                                    <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <div class="input-group">
@@ -127,7 +127,6 @@
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Service Info</th>
-                            <th scope="col"></th>
                             <th scope="col">service</th>
                             <th scope="col">price</th>
                         </tr>
@@ -144,12 +143,9 @@
                             <td class="py-3">
                                 <p class="my-0">${{ services.price }}</p>
                             </td>
-                            <td class="py-3">
-                                <p class="my-0">${{ services.price }}</p>
-                            </td>
                         </tr>
-                        <tr>
                     {% endfor %}
+                        <tr>
                             <td colspan="5" class="text-right">
                                 <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                     <span class="icon">
