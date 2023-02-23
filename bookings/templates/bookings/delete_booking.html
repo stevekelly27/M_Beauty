@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Booking Beauty</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+</div>
+<div class="container-fluid border-0 py-3 pt-0">
+    <div class="card text-center border-0">
+        <div class="form-container fs-6 p-0 mb-0 pt-4">
+          <div class="sign-up-container">
+            <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Cancel booking</div>
+              <form class="page-card-body" method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to cancel</p>
+                <p>{{ bookings.service }}</p>
+                <p>on {{ bookings.date }} at {{ bookings.get_time_display }}?</p>
+                <button class="btn action-btn mb-3 px-4" type="submit">Yes</button>
+                <a href="{{ bookings_url }}" class="btn action-btn mb-3 px-4 mx-2">No</a>
+              </form>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

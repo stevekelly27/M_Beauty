@@ -55,11 +55,35 @@ def add_bookings(request):
                 'Request unsuccessful - address errors',
                 extra_tags='unsuccessful_request'
                 )
-            return render(request, 'bookings/bookings.html', context)
+            return render(request, 'bookings/add_bookings.html', context)
 
     else:
         form = BookingForm
         context = {
             'form': form
         }
-    return render(request, 'bookings/bookings.html', context)
+    return render(request, 'bookings/add_bookings.html', context)
+
+
+def delete_bookings(request, booking_id):
+    """
+    Function to view delete bookings page.
+    The get request returns the delete bookings page.
+    The post request deletes the booking,
+    returns booking page and
+    displays the success message on the bookings page.
+    """
+
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == "POST":
+        booking.delete()
+        messages.success(
+            request,
+            'Request successful',
+            extra_tags='successful_request'
+        )
+        return redirect('bookings')
+    context = {
+        'bookings': booking
+    }
+    return render(request, 'bookings/delete_bookings.html', context)

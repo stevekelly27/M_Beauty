@@ -11,6 +11,58 @@ body {
     height: 150px;
 }
 
+
+.dropdown-menu,
+footer,
+.book-btn,
+.page-card-body,
+.accordion-button,
+.accordion-body,
+.sign-up-container {
+    background-color: #aa83b9;
+    text-align: center;
+}
+
+.contact,
+.page-card-header,
+.action-btn:hover
+{
+    background-color: hsl(285, 24%, 53%);
+}
+
+.page-card-header,
+.action-btn,
+.action-btn:hover,
+.contact,
+.book-btn:hover {
+    color: #d2a8e2;
+    text-align: center;
+}
+
+.action-btn,
+.book-btn:hover {
+    text-decoration: none;
+}
+
+.sign-up-container {
+    width: 95%;;
+}
+
+.header-text {
+    width: 100%;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-container input {
+    width: 90%;
+}
+
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -36,6 +88,11 @@ body {
 
 }
 
+.cancel-change-btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
 
 .btn-black {
     background: black;
@@ -164,4 +221,27 @@ body {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+
+/* media queries */
+
+@media (min-width: 768px) {
+    .sign-up-container {
+    width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .sign-up-container {
+    width: 35%;
+    }
+}
+
+@media (max-width: 992px) {
+    .cancel-change-btn {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
 }
