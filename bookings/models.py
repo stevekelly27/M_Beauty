@@ -1,6 +1,7 @@
 from datetime import date
 from django.core.exceptions import ValidationError
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 
 
@@ -42,7 +43,8 @@ class Booking(models.Model):
         )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="timeslot")
-    # paid = models.CharField(max_length=30, default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    paid = forms.BooleanField(initial=False)
 
     def __str__(self):
         """

@@ -12,9 +12,8 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
     in_stock = True
     booking_total = 0
-    booking_id = product.id
-
     product = get_object_or_404(Product, name='booking')
+    booking_id = product.id
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):

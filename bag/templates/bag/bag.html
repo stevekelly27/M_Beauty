@@ -74,7 +74,9 @@
                                             </div>
                                         </div>
                                     </form>
+                                    {% if item.product.name != 'booking' %}
                                     <a class="update-link text-info"><small>Update</small></a>
+                                    {% endif %}
                                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                 </td>
                                 <td class="py-3">
@@ -182,6 +184,7 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
+
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
@@ -193,7 +196,7 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = {'csrfmiddlewaretoken': csrfToken, 'quantity':2};
 
         $.post(url, data)
          .done(function() {

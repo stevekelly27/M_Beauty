@@ -9,8 +9,6 @@ from products.models import Product
 def view_bag(request):
     """ A view that renders the bag contents page """
 
-    return render(request, 'bag/bag.html')
-
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
@@ -63,6 +61,14 @@ def remove_from_bag(request, item_id):
         bag.pop(item_id)
 
         request.session['bag'] = bag
+        if 'quantity' in request.POST:
+            quantity = int(request.POST['quantity'])
+        product = get_object_or_404(Product, name='booking')
+        booking_id = product.id
+        if item_id == booking_id:
+            latest_booking = Booking.objects.all().order_by('-id')[:quantity]
+            latest_booking.delete()
+
         return HttpResponse(status=200)
 
     except Exception as e:

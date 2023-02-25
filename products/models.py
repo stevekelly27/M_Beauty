@@ -1,4 +1,7 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+import datetime
+from bookings.models import Booking
 
 
 class Category(models.Model):
@@ -27,6 +30,9 @@ class Product (models.Model):
     in_stock = models.BooleanField(default=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    booking = {
+        
+    }
 
     def save(self, *args, **kwargs):
         if self.stock_level <= 0:
@@ -38,41 +44,3 @@ class Product (models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Booking_product (models.Models):
-    date = models.DateField(
-        validators=[validate_date]
-        )
-
-    time = models.IntegerField(choices=TIME_LIST)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    service = models.ForeignKey(
-        'services.Service',
-        on_delete=models.CASCADE,
-        )
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="timeslot")
-
-    def __str__(self):
-        """
-        Method to display booking instance by date, time and stylist.
-        """ 
-        return f'{self.date} {self.get_time_display()}'
-
-    class Meta:
-        """
-        Class to ensure booking is classified as
-        unique by date and time.
-        """
-        unique_together = ('date', 'time')
-
-    @property
-    def past_date(self):
-        """
-        Decorator to check if date is in the past.
-        """
-        today = date.today()
-        if self.date < today:
-            return True
