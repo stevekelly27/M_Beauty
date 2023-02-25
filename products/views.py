@@ -8,7 +8,7 @@ from .models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all()
+    products = Product.objects.filter(product_id=pk)
     categories = None
 
     if request.GET:

@@ -11,21 +11,32 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
     in_stock = True
+    booking_total = 0
+    booking_id = product.id
+
+    product = get_object_or_404(Product, name='booking')
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
             product_count += item_data
+            if item_id == booking_id:
+                booking_total += item_data * product.price
             bag_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
             })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+    if (total - booking_total) > 0:
+        if (total - booking_total) < settings.FREE_DELIVERY_THRESHOLD:
+            delivery = (total - booking_total) * Decimal(
+                settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+            free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+        else:
+            delivery = 0
+        free_delivery_delta = 0
     else:
         delivery = 0
         free_delivery_delta = 0

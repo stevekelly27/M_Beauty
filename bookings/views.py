@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Booking
 from .forms import BookingForm
+from products.models import Product
+from products.models import Booking_product
 
 
 def bookings(request):
@@ -36,6 +38,7 @@ def add_bookings(request):
     if request.method == 'POST':
 
         form = BookingForm(request.POST)
+        product = get_object_or_404(Product, name = 'booking')
         context = {
             'form': form
         }
@@ -48,7 +51,7 @@ def add_bookings(request):
                 'Request successful',
                 extra_tags='successful_request'
             )
-            return redirect('bookings')
+            return redirect('add_to_bag', item_id=product.id)
         else:
             messages.error(
                 request,
