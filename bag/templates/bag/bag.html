@@ -37,9 +37,11 @@
 
                         {% for item in bag_items %}
                             <tr>
+                                {% if product.image in product %}
                                 <td class="p-3 w-25">
                                     <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                 </td>
+                                {% endif %}
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                 </td>
@@ -123,7 +125,7 @@
                     <span class="text-uppercase">Return Home</span>
                 </a>
             {% endif %}
-            {% if services %}    
+            {% if bookings %}    
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
@@ -134,16 +136,16 @@
                         </tr>
                     </thead>
 
-                    {% for service in services %}
+                    {% for booking in bookings %}
                         <tr>
                             <td class="p-3 w-25">
-                                <img class="img-fluid rounded" src="{{ item.services.image.url }}">
+                                <img class="img-fluid rounded" src="{{ item.booking.image.url }}">
                             </td>
                             <td class="py-3">
-                                <p class="my-0"><strong>{{ services.name }}</strong></p>
+                                <p class="my-0"><strong>{{ booking.name }}</strong></p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0">${{ services.price }}</p>
+                                <p class="my-0">${{ booking.price }}</p>
                             </td>
                         </tr>
                     {% endfor %}
@@ -165,14 +167,6 @@
                         </tr>
                 </table>
             </div>
-            {% else %}
-                <p class="lead mb-5">Your bag is empty.</p>
-                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Return Home</span>
-                </a>
             {% endif %}
         </div>
     </div>
@@ -196,7 +190,7 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'quantity':2};
+        var data = {'csrfmiddlewaretoken': csrfToken, 'quantity':1};
 
         $.post(url, data)
          .done(function() {

@@ -155,6 +155,15 @@ footer,
 
 }
 
+.sign-up-container {
+    width: 95%;;
+}
+
+/* .signup, .login {
+    display: flex;
+
+} */
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

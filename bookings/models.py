@@ -45,6 +45,7 @@ class Booking(models.Model):
         User, on_delete=models.CASCADE, related_name="timeslot")
     created = models.DateTimeField(auto_now_add=True)
     paid = forms.BooleanField(initial=False)
+    paid = models.BooleanField(default=False)
 
     def __str__(self):
         """

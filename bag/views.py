@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-
+from bookings.models import Booking
 from products.models import Product
 
 # Create your views here.
@@ -8,6 +8,7 @@ from products.models import Product
 
 def view_bag(request):
     """ A view that renders the bag contents page """
+    return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
@@ -65,9 +66,10 @@ def remove_from_bag(request, item_id):
             quantity = int(request.POST['quantity'])
         product = get_object_or_404(Product, name='booking')
         booking_id = product.id
-        if item_id == booking_id:
-            latest_booking = Booking.objects.all().order_by('-id')[:quantity]
-            latest_booking.delete()
+        if int(item_id) == int(booking_id):
+            latest_booking = Booking.objects.filter(user=request.user).order_by('-id')[:quantity]
+            for lb in latest_booking:
+                lb.delete()
 
         return HttpResponse(status=200)
 
