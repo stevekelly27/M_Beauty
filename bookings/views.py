@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, BookingFormAdmin
 from products.models import Product
 from django.utils import timezone
 from datetime import datetime, timedelta
+
 
 @login_required(login_url='/accounts/login/')
 def bookings(request):
@@ -27,6 +28,7 @@ def bookings(request):
         }
     return render(request, 'bookings/bookings.html', context)
 
+
 @login_required(login_url='/accounts/login/')
 def add_bookings(request):
     """
@@ -40,32 +42,57 @@ def add_bookings(request):
     """
 
     if request.method == 'POST':
-
-        form = BookingForm(request.POST)
-        product = get_object_or_404(Product, name='Booking deposit')
-        context = {
-            'form': form
-        }
-        print("form", form)
-        if form.is_valid():
-            booking = form.save(commit=False)
-            booking.user = request.user
-            #booking.paid = False
-            booking.save()
-            return redirect('add_to_bag', item_id=product.id)
-        else:
-            messages.error(
-                request,
-                'Request unsuccessful - address errors',
-                extra_tags='unsuccessful_request'
+        if request.user.is_superuser:
+            form = BookingFormAdmin(request.POST)
+            context = {
+                'form': form
+            }
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request,
+                    'Request successful',
+                    extra_tags='successful_request'
                 )
-            return render(request, 'bookings/add_bookings.html', context)
+                return redirect('bookings')
+            else:
+                messages.error(
+                    request,
+                    'Request unsuccessful - address errors',
+                    extra_tags='unsuccessful_request'
+                    )
+                return render(request, 'bookings/add_bookings.html', context)
+
+        else:
+            form = BookingForm(request.POST)
+            product = get_object_or_404(Product, name='Booking deposit')
+            context = {
+                'form': form
+            }
+            print("form", form)
+            if form.is_valid():
+                booking = form.save(commit=False)
+                booking.user = request.user
+                #booking.paid = False
+                booking.save()
+                return redirect('add_to_bag', item_id=product.id)
+            else:
+                messages.error(
+                    request,
+                    'Request unsuccessful - address errors',
+                    extra_tags='unsuccessful_request'
+                    )
+                return render(request, 'bookings/add_bookings.html', context)
 
     else:
-        form = BookingForm
+        if request.user.is_superuser:
+            form = BookingFormAdmin
+        else:
+            form = BookingForm
         context = {
             'form': form
         }
+
     return render(request, 'bookings/add_bookings.html', context)
 
 @login_required(login_url='/accounts/login/')
