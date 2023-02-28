@@ -8,7 +8,7 @@ from .models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.exclude(name__in=['booking'])
+    products = Product.objects.exclude(name__in=['Booking deposit'])
     categories = None
 
     if request.GET:
@@ -16,7 +16,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(
-                name__in=categories).exclude(name='bookings')
+                name__in=categories).exclude(name='booking')
 
     context = {
         'products': products,

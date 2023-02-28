@@ -27,7 +27,7 @@ def bookings(request):
         }
     return render(request, 'bookings/bookings.html', context)
 
-
+@login_required(login_url='/accounts/login/')
 def add_bookings(request):
     """
     Function to view add bookings page.
@@ -38,23 +38,20 @@ def add_bookings(request):
     message. If form is invalid, error message is
     displayed.
     """
+
     if request.method == 'POST':
 
         form = BookingForm(request.POST)
-        product = get_object_or_404(Product, name='booking')
+        product = get_object_or_404(Product, name='Booking deposit')
         context = {
             'form': form
         }
+        print("form", form)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
             #booking.paid = False
             booking.save()
-            messages.success(
-                request,
-                'Request successful',
-                extra_tags='successful_request'
-            )
             return redirect('add_to_bag', item_id=product.id)
         else:
             messages.error(
@@ -71,7 +68,7 @@ def add_bookings(request):
         }
     return render(request, 'bookings/add_bookings.html', context)
 
-
+@login_required(login_url='/accounts/login/')
 def delete_bookings(request, booking_id):
     """
     Function to view delete bookings page.
@@ -82,6 +79,7 @@ def delete_bookings(request, booking_id):
     """
 
     booking = get_object_or_404(Booking, id=booking_id)
+
     if request.method == "POST":
         created = booking.created
         paid = booking.paid
@@ -99,14 +97,14 @@ def delete_bookings(request, booking_id):
 
         seconds_in_day = 24 * 60 * 60
         minutesdiff = divmod(difference.days * seconds_in_day + difference.seconds, 60)[0]
-        #print("check", minutesdiff)
+        print("check", minutesdiff, paid)
 
-        if (created.date() == timezone.now().date() or minutesdiff > 0) and paid == False:
+        if (created.date() == timezone.now().date() or minutesdiff >= 0) and paid == False:
             print("here")
 
             bag = request.session.get('bag', {})
-            product = get_object_or_404(Product, name='booking')
-            item_id = product.id
+            product = get_object_or_404(Product, name='Booking deposit')
+            item_id = str(product.id)
 
             if item_id in list(bag.keys()):
                 quantity = int(bag[item_id])

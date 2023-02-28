@@ -12,7 +12,7 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
     in_stock = True
     booking_total = 0
-    product = get_object_or_404(Product, name='booking')
+    product = get_object_or_404(Product, name='Booking deposit')
     booking_id = product.id
 
     for item_id, item_data in bag.items():

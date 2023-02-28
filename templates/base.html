@@ -1,5 +1,9 @@
 {% load static %}
 
+{% load account %}
+
+{% user_display user %}
+
 
 <!doctype html>
 <html lang="en">
@@ -38,22 +42,26 @@
 
     <title>M Beauty {% block extra_title %}{% endblock %}</title>
   </head>
-  <body id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-    <header id="navbar" class="container-fluid fixed-top" style="background-color: #56166e;">
-      <div>
+  <body id="topnav" class="row bg-white pt-lg-2 d-lg-flex">
+    <header id="navbar" class="container-fluid fixed-top opacity" style="background-color: hsl(286, 58%, 77%);">
+      <div class="d-none d-lg-block"> <!-- <div class="d-none d-lg-block" or <div class="d-none d-lg-flex" -->
         <nav class="navbar navbar-expand-lg">
           <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
             <div class="logo">
-              <a href="{% url 'home' %}">
-                  <!-- <img src="{{ MEDIA_URL }}/images/M-Beauty-logo.JPG"> -->
+              <a href="{% url 'home' %}" class="main-logo-link">
+                  <img src="{{ MEDIA_URL }}/M-Beauty-logo.JPG">
               </a>
-            </div>
+            </div> 
           </div>
+
+<!--           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> -->
         
           <div class="collapse navbar-collapse mr-5" id="navbarSupportedContent">
+           
+          <div class="mr-5">
             <ul class="navbar-nav list-inline list-unstyled text-center text-lg-right my-0">
               <li class="nav-item mr-5">
                 <a class="nav-link" href="#">Gallery</a>
@@ -86,7 +94,7 @@
             <li class="list-inline-item">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                   <div class="text-center">
-                      <div><i class="fas fa-shopping-bag"></i></div>
+                      <!-- <div><i class="fas fa-shopping-bag"></i></div> -->
                       <p class="my-0">
                           {% if grand_total %}
                               ${{ grand_total|floatformat:2 }}
@@ -101,6 +109,70 @@
           </div>
         </nav>
     </div>
+    <!--hamb button-->
+
+
+
+    <!-- <div class="row bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          {% include 'includes/mobile-top-header.html' %}
+      </nav>
+  </div> -->
+
+
+
+
+    <!-- Sidenav -->
+
+
+<!-- <nav id="sidenav-1" class="sidenav d-none-sm" data-mdb-hidden="false">
+  <ul class="sidenav-menu">
+    <li class="sidenav-item">
+      <a class="sidenav-link">
+        <i class="far fa-smile fa-fw me-3"></i> <a class="nav-link" href="{% url 'products' %}">Products</a></a>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link">
+        <i class="far fa-smile fa-fw me-3"></i><a class="sidenav-link" href="{% url 'services' %}">Services</a></a>
+    </li>
+   <div class="list-inline-item dropdown mr-5">
+        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+                <p class="my-0">My Account</p>
+            </div>
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+        </div>
+    </div>
+  </ul>
+</nav> -->
+
+
+<!-- Sidenav -->
+
+<!-- Toggler -->
+
+
+<!-- <button data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1" class="btn btn-primary"
+  aria-controls="#sidenav-1" aria-haspopup="true">
+  <i class="fas fa-bars"></i>
+</button> -->
+
+
+<!-- Toggler -->
   </header>
   {% if messages %}
   <div class="message-container"> 
@@ -126,6 +198,35 @@
     {% block content %}
 
     {% endblock %}
+
+    <div class="container-fluid mt-auto">
+      <footer>
+        <div class="row">
+            <div class="col-4">
+                <div class="card-body contact mt-3">
+                    <h5 class="card-title"><strong>Contact Me</strong></h5>
+                    <h6 class="card-text contact">21 Innisfallen, Rookery Rd, Killarney</h6>
+                    <h6 class="card-text contact">Tel: 087 765 0518</h6><br>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card-body contact mt-4">
+                    <h5 class="card-title"><strong>Follow me on my socials</strong></h5>
+                    <a class="p-4 social" href="https://facebook.com" target="_blank" rel="noopener"
+                    aria-label="Find us on Facebook"><i class="fa-lg fa-brands fa-facebook"></i></a>
+                    <a class="p-4 social" href="https://instagram.com" target="_blank" rel="noopener"
+                    aria-label="Find us on Instagram"><i class="fa-lg fa-5x fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card-body contact mt-4">
+                    <h5 class="card-text contact"><strong>Opening Times</strong></h5>
+                    <h6 class="card-text contact">Mon - Sun: 9am - 7pm</h6><br> 
+                </div>
+            </div> 
+        </div>   
+      </footer>
+    </div>
 
     {% block postloadjs %}
     <script type="text/javascript">

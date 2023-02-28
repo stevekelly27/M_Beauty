@@ -17,12 +17,12 @@ def add_to_bag(request, item_id):
     product = Product.objects.get(pk=item_id)
     bag = request.session.get('bag', {})
 
-    if product.name == 'booking':
+    if product.name == 'Booking deposit':
         redirect_url = 'bookings'
     else:
         redirect_url = request.POST.get('redirect_url')
 
-    if product.name == 'booking':
+    if product.name == 'Booking deposit':
         quantity = 1
     else:
         quantity = int(request.POST.get('quantity'))
@@ -64,7 +64,7 @@ def remove_from_bag(request, item_id):
         request.session['bag'] = bag
         if 'quantity' in request.POST:
             quantity = int(request.POST['quantity'])
-        product = get_object_or_404(Product, name='booking')
+        product = get_object_or_404(Product, name='Booking deposit')
         booking_id = product.id
         if int(item_id) == int(booking_id):
             latest_booking = Booking.objects.filter(user=request.user).order_by('-id')[:quantity]

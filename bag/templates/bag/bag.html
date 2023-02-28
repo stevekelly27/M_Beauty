@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <h2 class="logo-font mb-4 text-center">Shopping Bag</h2>
             <hr>
         </div>
     </div>
@@ -37,11 +37,11 @@
 
                         {% for item in bag_items %}
                             <tr>
-                                {% if product.image in product %}
+                                
                                 <td class="p-3 w-25">
                                     <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                 </td>
-                                {% endif %}
+                                
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                 </td>
@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    {% if item.product.name != 'booking' %}
+                                    {% if item.product.name != 'Booking deposit' %}
                                     <a class="update-link text-info"><small>Update</small></a>
                                     {% endif %}
                                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
@@ -125,49 +125,6 @@
                     <span class="text-uppercase">Return Home</span>
                 </a>
             {% endif %}
-            {% if bookings %}    
-            <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
-                    <thead class="text-black">
-                        <tr>
-                            <th scope="col">Service Info</th>
-                            <th scope="col">service</th>
-                            <th scope="col">price</th>
-                        </tr>
-                    </thead>
-
-                    {% for booking in bookings %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                <img class="img-fluid rounded" src="{{ item.booking.image.url }}">
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0"><strong>{{ booking.name }}</strong></p>
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0">${{ booking.price }}</p>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                        <tr>
-                            <td colspan="5" class="text-right">
-                                <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Book another service</span>
-                                </a>
-                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                </table>
-            </div>
-            {% endif %}
         </div>
     </div>
 </div>
@@ -190,7 +147,8 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'quantity':1};
+        var qty = $(`#id_qty_${itemId}`).val();
+        var data = {'csrfmiddlewaretoken': csrfToken, 'quantity':qty};
 
         $.post(url, data)
          .done(function() {
