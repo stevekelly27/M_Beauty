@@ -22,12 +22,12 @@
 <div class="container-fluid mt-5">
     <div class="row">
         {% for service in gel_nail_services %}
-            <div class="col-6">
+            <div class="col-4">
                 <div id="service" class="card">
                     <img src="{{ MEDIA_URL }}/glitter-nails.jpg" class="card-img-top" alt="glitter gel nails">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">All lengths and designs included!</p>
                     <p>€{{ service.price }}</p>
                     <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
                     </div>
@@ -35,12 +35,25 @@
             </div>
         {% endfor %}
         {% for service in shellac_services %}
-            <div class="col-6">
+            <div class="col-4">
                 <div id="service" class="card">
                     <img src="{{ MEDIA_URL }}/shellac.JPG" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Gel polish applied on natural nails only.</p>
+                    <p>€{{ service.price }}</p>
+                    <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% for service in manicure %}
+            <div class="col-4">
+                <div id="service" class="card">
+                    <img src="{{ MEDIA_URL }}/shellac.JPG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
+                    <p class="card-text">Gel polish applied on natural nails only.</p>
                     <p>€{{ service.price }}</p>
                     <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
                     </div>
@@ -50,12 +63,12 @@
     </div>
     <div class="row">
         {% for service in brow_services %}
-            <div class="col-6 mt-5 mb-5">
+            <div class="col-4 mt-5 mb-5">
                 <div id="service" class="card">
                     <img src="{{ MEDIA_URL }}/eyebrows1.JPG" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Nourishing colouring process which lasts on the hair up to 8 weeks, and on the skin for up to two weeks.</p>
                     <p>€{{ service.price }}</p>
                     <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
                     </div>
@@ -63,12 +76,25 @@
             </div>
         {% endfor %}
         {% for service in henna_brow_services %}
-            <div class="col-6 mt-5 mb-5">
+            <div class="col-4 mt-5 mb-5">
                 <div id="service" class="card">
                     <img src="{{ MEDIA_URL }}/eyebrows1.JPG" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Process which changes the structure of the hair.</p>
+                    <p>€{{ service.price }}</p>
+                    <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% for service in Shape_tint %}
+            <div class="col-4 mt-5 mb-5">
+                <div id="service" class="card">
+                    <img src="{{ MEDIA_URL }}/shellac.JPG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
+                    <p class="card-text">Gel polish applied on natural nails only.</p>
                     <p>€{{ service.price }}</p>
                     <a href="{% url 'bookings' %}" class="btn btn-primary">Book Now</a>
                     </div>

@@ -15,8 +15,10 @@ class Service(models.Model):
 
         GEL = 'GEL', 'Gel'
         SHELLAC = 'SHELLAC', 'Shellac'
+        MANICURE = 'MANICURE', 'Manicure'
         BROWS = 'BROWS', 'Brows'
         HENNA = 'HENNA', 'Henna'
+        SHAPE_TINT = 'SHAPE_TINT', 'Shape_tint'
 
     name = models.CharField(max_length=100, unique=True)
     service_type = models.CharField(
