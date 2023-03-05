@@ -76,7 +76,7 @@ def checkout(request):
                             "again later.").format(product.name))
 
                         order.delete()
-                        return redirect(reverse('view_cart'))
+                        return redirect(reverse('view_bag'))
 
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
