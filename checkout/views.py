@@ -6,6 +6,7 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
+from bookings.models import Booking
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
@@ -56,25 +57,35 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
             for item_id, item_data in bag.items():
+
                 try:
                     product = Product.objects.get(id=item_id)
+
+                    if product.stock_level > 0:
+
+                        product.stock_level -= product.in_stock
+                        product.save()
+
+                    else:
+
+                        messages.error(request, (
+                            "Sorry, we are currently out of stock of {0}."
+                            "Please remove this item from your cart and try "
+                            "again later.").format(product.name))
+
+                        order.delete()
+                        return redirect(reverse('view_cart'))
+
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=item_data,
                         )
-                        order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
+                    order_line_item.save()
+
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
@@ -146,6 +157,7 @@ def checkout_success(request, order_number):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
+        paid = True
         order.user_profile = profile
         order.save()
 

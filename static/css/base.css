@@ -41,13 +41,13 @@ body {
     background-color: hsl(286, 58%, 77%);
 } 
 
-/* .nav-link {
+.nav-link {
     font-size: 20px;
     text-align: right;
     margin-top: 20px;
-    color: white;
+    color: hsl(286, 58%, 77%);
 
-} */
+}
 
 .jumbotron {
     background-color: hsl(286, 77%, 86%);

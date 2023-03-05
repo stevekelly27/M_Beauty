@@ -10,19 +10,22 @@
 {% endblock %}
 
 {% block content %}
-
+<!-- 
 <div class="jumbotron jumbotron-fluid vw-100">
   <div class="jumbo container">
     <h1 class="display-4 text-center">M Beatuy</h1>
     <p class="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
-</div>
+</div> -->
 
 
 <div class="container carousel-container">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
+          <img src="{{ MEDIA_URL }}M-Beauty-logo.JPG" class="d-block w-100" alt="Pink to light-pink fade nails">
+        </div>
+        <div class="carousel-item">
           <img src="{{ MEDIA_URL }}pink-flowers-nails.jpg" class="d-block w-100" alt="nails holding sign">
         </div>
         <div class="carousel-item">
@@ -44,7 +47,7 @@
   </div>
 </div>
 
-<div id="opacity" class="card border-0 col-4 offset-4 mt-5 mb-5">
+<div id="opacity" class="card border-0 col-6 offset-3 mt-5 mb-5">
   <div class="col-12">
     <div class="card row text-center">
       <div class="card-header">
@@ -86,6 +89,11 @@
         <a href="#" class="btn btn-primary">Book Now</a>
       </div>
     </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="col-6 offset-3">
+    <img src="{{ MEDIA_URL }}price-list.JPG" class="d-block w-100" alt="nails holding sign">
   </div>
 </div>
 {% endblock %}
