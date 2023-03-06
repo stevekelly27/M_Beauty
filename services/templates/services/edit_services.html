@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid border-0 py-3 pt-0">
+    <div class="card text-center border-0">
+        <div class="form-container fs-6 p-0 mb-0 pt-4">
+          <div class="sign-up-container">
+            <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Edit service</div>
+                <form class="page-card-body" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn action-btn mb-3 px-4" type="submit">Confirm</button>
+                    <a href="{{ services_url }}" class="btn action-btn mb-3 px-4 mx-2">Cancel</a>
+                </form>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

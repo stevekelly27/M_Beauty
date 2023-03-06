@@ -63,28 +63,29 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
 
-                    if product.stock_level > 0:
+                    if product.name != 'booking':
+                        if product.stock_level > 0:
 
-                        product.stock_level -= product.in_stock
-                        product.save()
+                            product.stock_level -= product.in_stock
+                            product.save()
 
-                    else:
+                        else:
 
-                        messages.error(request, (
-                            "Sorry, we are currently out of stock of {0}."
-                            "Please remove this item from your cart and try "
-                            "again later.").format(product.name))
+                            messages.error(request, (
+                                "Sorry, we are currently out of stock of {0}."
+                                "Please remove this item from your cart and try "
+                                "again later.").format(product.name))
 
-                        order.delete()
-                        return redirect(reverse('view_bag'))
+                            order.delete()
+                            return redirect(reverse('view_bag'))
 
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                    order_line_item.save()
+                        if isinstance(item_data, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=item_data,
+                            )
+                        order_line_item.save()
 
                 except Product.DoesNotExist:
                     messages.error(request, (

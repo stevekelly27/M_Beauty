@@ -58,7 +58,7 @@ def add_bookings(request):
             else:
                 messages.error(
                     request,
-                    'Request unsuccessful - address errors',
+                    'Request unsuccessful - Please make sure all the fields have been filled out properly on the form',
                     extra_tags='unsuccessful_request'
                     )
                 return render(request, 'bookings/add_bookings.html', context)
@@ -79,7 +79,7 @@ def add_bookings(request):
             else:
                 messages.error(
                     request,
-                    'Request unsuccessful - address errors',
+                    'Request unsuccessful - sorry, this slot has been filled. Please choose another time.',
                     extra_tags='unsuccessful_request'
                     )
                 return render(request, 'bookings/add_bookings.html', context)

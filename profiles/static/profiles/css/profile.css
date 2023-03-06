@@ -19,3 +19,11 @@
 #id_default_country option:first-child {
     color: #aab7c4;
 }
+
+/* .footer {
+    position:fixed;
+} */
+
+.footer {
+    padding-top: 15%;
+}

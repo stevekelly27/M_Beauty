@@ -29,3 +29,99 @@ def services(request):
         'brow_services': brow_services,
         'henna_brow_services': henna_brow_services,
         'shape_tint_services': shape_tint_services, })
+
+
+def add_services(request):
+    """
+    Function to view add services page.
+    The get request returns the add services form.
+    The post request checks the form is valid,
+    saves the form if valid,
+    returns services page and displays
+    the success message. If not valid, error message
+    is displayed.
+    """
+
+    if request.method == "POST":
+        form = ServiceForm(request.POST)
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                'Request successful',
+                extra_tags='successful_request')
+            return redirect('services')
+        else:
+            messages.error(
+                request,
+                'Request unsuccessful - address errors',
+                extra_tags='unsuccessful_request')
+            return render(request, 'services/add_services.html', context)
+    form = ServiceForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'services/add_services.html', context)
+
+
+def edit_services(request, service_id):
+    """
+    Function to view edit services page.
+    The get request returns the edit services page.
+    The post request checks the form is valid,
+    saves the form if valid,
+    returns services page and displays
+    the success message. If not valid, error message
+    is displayed.
+    """
+
+    service = get_object_or_404(Service, id=service_id)
+    if request.method == "POST":
+        form = ServiceForm(request.POST, instance=service)
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                'Request successful',
+                extra_tags='successful_request')
+            return redirect('services')
+        else:
+            messages.error(
+                request,
+                'Request unsuccessful - address errors',
+                extra_tags='unsuccessful_request')
+            return render(request, 'services/edit_services.html', context)
+    form = ServiceForm(instance=service)
+    context = {
+        'form': form
+    }
+    return render(request, 'services/edit_services.html', context)
+
+
+def delete_services(request, service_id):
+    """
+    Function to view delete services page.
+    The get request returns the delete services page.
+    The post request deletes the service,
+    returns the services page and displays success
+    message on the services page.
+    """
+
+    service = get_object_or_404(Service, id=service_id)
+    if request.method == "POST":
+        service.delete()
+        messages.success(
+            request,
+            'Request successful',
+            extra_tags='successful_request')
+        return redirect('services')
+    context = {
+        'service': service
+    }
+    return render(request, 'services/delete_services.html', context)

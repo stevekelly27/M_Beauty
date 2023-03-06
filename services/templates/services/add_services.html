@@ -1,12 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra_css %}
-<style>
-body > div.container-fluid.mt-auto {
-    padding-top: 215;
-}
-</style>
-{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -16,27 +10,21 @@ body > div.container-fluid.mt-auto {
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Booking Beauty</h2>
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-</div>
+
 <div class="container-fluid border-0 py-3 pt-0">
     <div class="card text-center border-0">
         <div class="form-container fs-6 p-0 mb-0 pt-4">
             <div class="sign-up-container">
-                <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Make booking</div>
-                    <form class="flex-column" action="{% url 'add_bookings' %}" method="POST">
+                <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Add service</div>
+                    <form class="page-card-body" action="{% url 'add_services' %}" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button class="btn action-btn mb-3 px-4" type="submit">Confirm</button>
-                        <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">Cancel</a>
+                        <a href="{{ services_url }}" class="btn action-btn mb-3 px-4 mx-2">Cancel</a>
                     </form>
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
