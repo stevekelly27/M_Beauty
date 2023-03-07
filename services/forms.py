@@ -14,7 +14,7 @@ class ServiceForm(forms.ModelForm):
         """
 
         model = Service
-        fields = ['name', 'service_type', 'price']
+        fields = ['name', 'service_type', 'description', 'price', 'image']
         labels = {
             'name': 'Service name',
             'price': 'Price (€)'

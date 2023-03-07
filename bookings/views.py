@@ -58,8 +58,7 @@ def add_bookings(request):
             else:
                 messages.error(
                     request,
-                    'Request unsuccessful - Please make sure all the fields have been filled out properly on the form',
-                    extra_tags='unsuccessful_request'
+                    'Request unsuccessful -sorry, this slot has been filled. Please choose another time.'
                     )
                 return render(request, 'bookings/add_bookings.html', context)
 
@@ -73,7 +72,6 @@ def add_bookings(request):
             if form.is_valid():
                 booking = form.save(commit=False)
                 booking.user = request.user
-                #booking.paid = False
                 booking.save()
                 return redirect('add_to_bag', item_id=product.id)
             else:
