@@ -42,7 +42,7 @@ def add_services(request):
     is displayed.
     """
 
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_superuser:
         form = ServiceForm(request.POST)
         context = {
             'form': form
@@ -79,7 +79,7 @@ def edit_services(request, service_id):
     """
 
     service = get_object_or_404(Service, id=service_id)
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_superuser:
         form = ServiceForm(request.POST, instance=service)
         context = {
             'form': form
@@ -114,7 +114,7 @@ def delete_services(request, service_id):
     """
 
     service = get_object_or_404(Service, id=service_id)
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_superuser:
         service.delete()
         messages.success(
             request,

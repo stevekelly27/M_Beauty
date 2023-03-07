@@ -122,13 +122,22 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
 
-                if product.name != 'booking':
-                    if product.stock_level > 0:
+                # if product.name != 'booking':
+                #     if product.stock_level > 0:
 
-                        raise Exception('err')
+                #         raise Exception('err')
 
                 for item_id, item_data in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
+                    bookings = False
+                if product.name != 'booking':
+                    if product.stock_level >= item_data:
+                        product.stock_level -= item_data       
+                        product.save()
+                    else:
+                        raise Exception('err')  
+                else:
+                    bookings = True
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -136,7 +145,14 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
-
+                if bookings:
+                    product = get_object_or_404(Product, name='Booking deposit')
+                    bookingOLI = get_object_or_404(OrderLineItem, order=order, product=product)
+                    qty = int(bookingOLI.quantity)
+                    latest_booking = list(Booking.objects.filter(user=request.user).order_by('-  id')[:qty])
+                    for lb in range(qty):
+                        latest_booking[lb].paid = True
+                        Booking.objects.bulk_update(latest_booking, ['paid'])
             except Exception as e:
                 if order:
                     order.delete()

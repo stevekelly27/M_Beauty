@@ -56,6 +56,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            bookings = False
             order.save()
 
             for item_id, item_data in bag.items():
@@ -64,20 +65,24 @@ def checkout(request):
                     product = Product.objects.get(id=item_id)
 
                     if product.name != 'booking':
-                        if product.stock_level > 0:
-
-                            product.stock_level -= product.in_stock
+                        if product.stock_level >= item_data:
+                            product.stock_level -= item_data       
                             product.save()
-
                         else:
-
-                            messages.error(request, (
-                                "Sorry, we are currently out of stock of {0}."
-                                "Please remove this item from your cart and try "
-                                "again later.").format(product.name))
-
-                            order.delete()
-                            return redirect(reverse('view_bag'))
+                            if product.stock_level <= 0:
+                                messages.error(request, (
+                                                        "Sorry, we are currently out of stock of {0}."
+                                                        "Please remove this item from your cart and try "
+                                                        "again later.").format(product.name))
+                            else:
+                                messages.error(request, (
+                                                        "Sorry, we only have stock of {0} for {1}."
+                                                        "Please adjust/remove this item from your cart and try "
+                                                        "again later.").format(product.stock_level, product.name))
+                                order.delete()
+                                return redirect(reverse('view_bag'))
+                    else:
+                        bookings = True
 
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
@@ -94,6 +99,17 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
+
+            if bookings:
+                product = get_object_or_404(Product, name='Booking deposit')
+                bookingOLI = get_object_or_404(OrderLineItem, order=order, product=product)
+                qty = int(bookingOLI.quantity)
+                # https://stackoverflow.com/questions/34833000/django-change-the-value-of-a-field-for-all-objects-in-a-queryset
+                # https://docs.djangoproject.com/en/3.2/ref/models/querysets/#bulk-update
+                latest_booking = list(Booking.objects.filter(user=request.user).order_by('-  id')[:qty])
+                for lb in range(qty):
+                    latest_booking[lb].paid = True
+                Booking.objects.bulk_update(latest_booking, ['paid'])
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
