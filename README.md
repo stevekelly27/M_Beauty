@@ -1,108 +1,50 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# M Beauty
+M Beauty is a B2C nail and beauty business located in Killarney. This business was stated up in 2020, and is a one woman operation that is very busy and this website should help with the day to day operations, being notified when a user makes a booking. 
 
-Welcome stevekelly27,
+# UX
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Strategy 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This website was designed and implemented with Django, Python, HTML, and CSS.
+It aims to provide an easy-to-use interface where customers can browse through the skincare products, or can choose a service provided and make a booking.
+The site offers an inbuilt stock system to ensure users cannot buy things that are not currently in stock. Once signed in, users can save an address to their profile for easy and convenient checkout. Once a user makes a booking they can check the time and date of the booking once the user is signed through a view bookings link and can also cancel a booking.
 
-## Gitpod Reminders
+## User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Epic 1 - Registration and User Accounts
 
-`python3 -m http.server`
+- As a Site User I want to be able to register for an account so that I can save my personal details.
+- As a Site User I want to be able to easily login or logout at any time so that I can access my personal account information on different devices.
+- As a Site User I want to be able to recover my password so that I can regain access to my account in the event I lose my password.
 
-A blue button should appear to click: _Make Public_,
+### Epic 2 - User Booking
 
-Another blue button should appear to click: _Open Browser_.
+- As a site user I want to be able to create a user account so that I can login to make a booking.
+- As a site user I want to be able to view my bookings from my account so that I have proof that the booking was made.
+- As a site user I want to be able to cancel my bookings from my account so that I can free up my appointment slot for somebody else.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### Epic 3 - User Products
 
-Another blue button should appear to click: _Open Browser_.
+- As a site user I want to view a list of clearly defined products so that I can browse freely.
+- As a site user I want to view individual product details so that I can get the full description, choose the quantity and add to cart.
+- As a site user I want to be able to see my shopping cart once I add a product to the cart for ease of navigation.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### Epic 4 - Site Navigation
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- As a site user I want to be able to view a site which is attractive yet informative so that I can gain an understanding of the sites purpose and navigation easily.
+- As a site user I want to be able to view salon service and price details so that I can clearly see what the salon can offer and the cost.
+- As a site user I want to be able to view a gallery of examples of past work completed so I can see the level of skill of the beautition.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### Epic 5 - Admin
 
-## Release History
+- As admin I want to be able to read, add, edit and delete products from the front end in the website.
+- As admin I want to be able to read, add and cancel bookings from the front end in the website.
+- As admin I want to be able to see, add, update and delete services from the front end in the website
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Scope
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
