@@ -41,13 +41,17 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-        else:
-            self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
-        self.save()
+        booking_total = 0
+        for lineitem in self.lineitems.all():
+            if lineitem.product.name == 'Booking deposit':
+                booking_total = lineitem.lineitem_total
+                self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+                if (self.order_total - booking_total) < settings.FREE_DELIVERY_THRESHOLD:
+                    self.delivery_cost = (self.order_total - booking_total) * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+                else:
+                    self.delivery_cost = 0
+                self.grand_total = self.order_total + self.delivery_cost
+                self.save()
 
     def save(self, *args, **kwargs):
         """
@@ -60,6 +64,21 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
+
+    def delete(self):
+        """
+        If order gets deleted all lineitems are deleted first
+        and order stock get added back to the product
+        """
+        print("orderline item deleted")
+
+        if self.product.name != 'Booking deposit':
+            product = Product.objects.get(id=self.product.id)
+            product.stock_level += self.quantity
+            product.save()
+        self.order.update_total()
+
+        super(OrderLineItem, self).delete()
 
 
 class OrderLineItem(models.Model):
