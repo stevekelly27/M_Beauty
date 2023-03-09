@@ -47,6 +47,21 @@ class BookingFormAdmin(forms.ModelForm):
         """
         return self.cleaned_data['last_name'].capitalize()
 
+    def clean(self):
+
+        cleaned_data = super().clean()
+        dt = cleaned_data.get('date')
+        time = cleaned_data.get('time')
+
+        try:
+            Booking.objects.get(date=cleaned_data['date'], time=cleaned_data['time'])
+        except Booking.DoesNotExist:
+            pass
+        else:
+            raise forms.ValidationError('Booking for this date and time already exists')
+
+        return cleaned_data  # or self.cleaned_data
+
 
 class BookingForm(forms.ModelForm):
     """

@@ -64,7 +64,7 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
 
-                    if product.name != 'booking':
+                    if product.name != 'Booking deposit':
                         if product.stock_level >= item_data:
                             product.stock_level -= item_data       
                             product.save()
@@ -79,8 +79,8 @@ def checkout(request):
                                                         "Sorry, we only have stock of {0} for {1}."
                                                         "Please adjust/remove this item from your cart and try "
                                                         "again later.").format(product.stock_level, product.name))
-                                order.delete()
-                                return redirect(reverse('view_bag'))
+                            order.delete()
+                            return redirect(reverse('view_bag'))
                     else:
                         bookings = True
 
