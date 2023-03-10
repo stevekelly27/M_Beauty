@@ -46,5 +46,36 @@ The site offers an inbuilt stock system to ensure users cannot buy things that a
 
 
 
-## Scope
+## Features
+
+### Nav bar
+
+The nav bar is the core navigation for the site. It differs slightly from mobile to desktop; however, both include all the same components.
+It consists of several integral links to allow the user ease of navigation.
+
+- The logo on the left, witch is Martas brand logo is featuired throughout the site also doubles as a return to home button.
+
+
+
+- Gallery, witch takes you to a dedicated page of Martas best work.
+
+- Products, brings you to beauty related products.
+
+- Price List, witch takes you to a dedicated page of Martas prices and deals.
+
+- Services, where the user chooses a service to make a booking.
+
+
+- Account, is a dropdown menu witch changes based on if you are logged in or not. If the user is not logged in there are two options in the dropdown, witch are 'login' or 'register'. If the user is logged in there is three options in the dropdown menu; 'Product management', 'My profile' and 'logout'.
+
+
+
+- Shopping bag, is in the form of the icon representing the bag total and is a link to take you to the bag once ready to checkout with a product or a booking deposit.
+
+
+
+
+
+ ### Footer
+
 

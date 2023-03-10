@@ -7,17 +7,17 @@
 #     def setUp(self):
 #         self.user = User.objects.create_user(
 #             username='testuser',
-#             email='testuser@example.com',
+#             email='test@example.com',
 #             password='testpass'
 #         )
 #         self.userprofile = UserProfile.objects.create(
 #             user=self.user,
-#             default_phone_number='555-555-5555',
-#             default_street_address1='123 Main St.',
+#             default_phone_number='51234567890',
+#             default_street_address1='123 forn St.',
 #             default_town_or_city='Anytown',
-#             default_county='Anycountry',
+#             default_county='Any',
 #             default_postcode='12345',
-#             default_country='US'
+#             default_country='UK'
 #         )
 
 #     def test_userprofile_creation(self):
@@ -28,7 +28,7 @@
 #         self.assertEqual(UserProfile.objects.count(), 1)
 #         User.objects.create_user(
 #             username='testuser2',
-#             email='testuser2@example.com',
+#             email='test2@example.com',
 #             password='testpass'
 #         )
 #         self.assertEqual(UserProfile.objects.count(), 2)

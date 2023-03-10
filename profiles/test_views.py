@@ -47,11 +47,11 @@
 #         # Test that the profile view updates the profile with valid form data
 #         url = reverse('profile')
 #         data = {
-#             'default_phone_number': '1234567890',
-#             'default_street_address1': '123 Main St',
-#             'default_town_or_city': 'City',
-#             'default_postcode': '12345',
-#             'default_country': 'US'
+#             default_phone_number='51234567890',
+#             default_street_address1='123 forn St.',
+#             default_town_or_city='Anytown',
+#             default_postcode='12345',
+#             default_country='UK'
 #         }
 #         response = self.client.post(url, data)
 #         self.assertRedirects(response, url)
