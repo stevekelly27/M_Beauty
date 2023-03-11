@@ -1,1 +1,1 @@
-web: gunicorn m-beauty.wsgi:application
+web: gunicorn M-Beauty.wsgi:application
