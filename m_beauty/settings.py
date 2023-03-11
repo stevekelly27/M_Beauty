@@ -145,6 +145,10 @@ else:
 #     'default': dj_database_url.parse('postgres://cwqjrdrx:PyT8W1gU7T_D2RwKn5LEDn7drr-9d9Q-@manny.db.elephantsql.com/cwqjrdrx')
 # }
 
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://cwqjrdrx:PyT8W1gU7T_D2RwKn5LEDn7drr-9d9Q-@manny.db.elephantsql.com/cwqjrdrx')
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -227,7 +231,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'mbeautykillarney@gmail.com'
+    DEFAULT_FROM_EMAIL = 'stevekelly28test@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
