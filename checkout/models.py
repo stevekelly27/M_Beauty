@@ -60,25 +60,29 @@ class Order(models.Model):
         """
         if not self.order_number:
             self.order_number = self._generate_order_number()
+
+            def delete(self):
+                """
+                idea from https://github.com/dnlbowers/Vape-Store/blob/main/checkout/models.py
+                If order gets deleted, children are deleted first from on delete cascade.
+                Order stock get added back to the product
+                
+                As bookings can't be paid at a later phase, we do not delete the bookings and
+                user can contact the admin
+                """
+                print("order deleted")
+                for lineitem in self.lineitems.all():
+                    if lineitem.product.name != 'Booking deposit': 
+                        product = Product.objects.get(id=lineitem.product.id)
+                        product.stock_level += lineitem.quantity
+                        product.save()
+
+                super(Order, self).delete()
+
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number
-
-    def delete(self):
-        """
-        If order gets deleted all lineitems are deleted first
-        and order stock get added back to the product
-        """
-        print("orderline item deleted")
-
-        if self.product.name != 'Booking deposit':
-            product = Product.objects.get(id=self.product.id)
-            product.stock_level += self.quantity
-            product.save()
-        self.order.update_total()
-
-        super(OrderLineItem, self).delete()
 
 
 class OrderLineItem(models.Model):
@@ -97,3 +101,18 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+    def delete(self):
+        """
+        If order gets deleted all lineitems are deleted first
+        and order stock get added back to the product
+        """
+        print("orderline item deleted")
+
+        if self.product.name != 'Booking deposit':
+            product = Product.objects.get(id=self.product.id)
+            product.stock_level += self.quantity
+            product.save()
+        self.order.update_total()
+
+        super(OrderLineItem, self).delete()

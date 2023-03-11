@@ -1,6 +1,7 @@
 from django.test import TestCase
 from datetime import date
 from .models import Booking
+from django.db import IntegrityError, transaction
 from .forms import BookingForm, BookingFormAdmin
 
 
@@ -23,7 +24,13 @@ class BookingFormTest(TestCase):
         self.assertEqual(booking.last_name, 'Doe')
         self.assertEqual(booking.date, date.today())
         self.assertEqual(booking.time, '09:00:00')
-        self.assertEqual(booking.service, 'Haircut')
+        # test meta_class of unique_together in likeability model
+        try: 
+            with transaction.atomic():
+                booking.objects.create(first_name=assertEqual.booking, last_name=assertEqual.booking, date=assertEqual.booking, time=assertEqual.booking)
+            self.fail('Duplicate question allowed.')
+        except IntegrityError:
+            pass # Duplicate question not allowed. Unique_together in Meta Class work
 
     def test_invalid_booking_form(self):
         """
