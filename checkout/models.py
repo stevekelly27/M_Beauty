@@ -84,6 +84,19 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+    def delete(self):
+        """
+        If order gets deleted, children are deleted first from on delete cascade
+        """
+        print("order deleted")
+        for lineitem in self.lineitems.all():
+            if lineitem.product.name != 'Booking deposit':
+                product = Product.objects.get(id=lineitem.product.id)
+                product.stock_level += lineitem.quantity
+                product.save()
+
+        super(Order, self).delete()
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')

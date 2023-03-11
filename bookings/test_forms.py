@@ -11,26 +11,35 @@ class BookingFormTest(TestCase):
         Test that a valid form is saved to the database.
         """
         form_data = {
-            'first_name': 'John',
+            'first_name': 'Jane',
             'last_name': 'Doe',
             'date': date.today(),
-            'time': '09:00:00',
-            'service': 'Haircut'
+            'time': '10AM',
+            'service': 'Gel'
         }
         form = BookingForm(data=form_data)
         self.assertTrue(form.is_valid())
         booking = form.save()
-        self.assertEqual(booking.first_name, 'John')
+        self.assertEqual(booking.first_name, 'Jane')
         self.assertEqual(booking.last_name, 'Doe')
         self.assertEqual(booking.date, date.today())
-        self.assertEqual(booking.time, '09:00:00')
+        self.assertEqual(booking.time, '10AM')
         # test meta_class of unique_together in likeability model
         try: 
             with transaction.atomic():
-                booking.objects.create(first_name=assertEqual.booking, last_name=assertEqual.booking, date=assertEqual.booking, time=assertEqual.booking)
+                form_data = {
+                    'first_name': 'second Jane',
+                    'last_name': 'second Doe',
+                    'date': date.today(),
+                    'time': '10AM',
+                    'service': 'Gel'
+                }
+                form = BookingForm(data=form_data)
+                booking = form.save()
+
             self.fail('Duplicate question allowed.')
-        except IntegrityError:
-            pass # Duplicate question not allowed. Unique_together in Meta Class work
+        except IntegrityError: 
+            pass   # Duplicate question not allowed. Unique_together in Meta Class work
 
     def test_invalid_booking_form(self):
         """
@@ -55,20 +64,20 @@ class BookingFormAdminTest(TestCase):
         """
         form_data = {
             'user': '',
-            'first_name': 'John',
+            'first_name': 'Jane',
             'last_name': 'Doe',
             'date': date.today(),
-            'time': '09:00:00',
-            'service': 'Haircut'
+            'time': '10AM',
+            'service': 'Gel'
         }
         form = BookingFormAdmin(data=form_data)
         self.assertTrue(form.is_valid())
         booking = form.save()
-        self.assertEqual(booking.first_name, 'John')
+        self.assertEqual(booking.first_name, 'Jane')
         self.assertEqual(booking.last_name, 'Doe')
         self.assertEqual(booking.date, date.today())
-        self.assertEqual(booking.time, '09:00:00')
-        self.assertEqual(booking.service, 'Haircut')
+        self.assertEqual(booking.time, '10AM')
+        self.assertEqual(booking.service, 'Gel')
 
     def test_invalid_booking_form_admin(self):
         """
