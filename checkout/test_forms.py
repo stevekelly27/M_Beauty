@@ -27,15 +27,7 @@ class TestOrderForm(TestCase):
             'postcode': '',
             'country': '',
         })
-        form_data = {
-            'first_name': 'second John',
-            'last_name': 'second Doe',
-            'date': date.today(),
-            'time': '09:00:00',
-            'service': 'Haircut'
-        }
-        form = BookingForm(data=form_data)
-        booking = form.save()
+        self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['phone_number'], ['This field is required.'])
         self.assertEqual(form.errors['street_address1'], ['This field is required.'])
         self.assertEqual(form.errors['town_or_city'], ['This field is required.'])

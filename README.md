@@ -66,7 +66,11 @@ It consists of several integral links to allow the user ease of navigation.
 - Services, where the user chooses a service to make a booking.
 
 
-- Account, is a dropdown menu witch changes based on if you are logged in or not. If the user is not logged in there are two options in the dropdown, witch are 'login' or 'register'. If the user is logged in there is three options in the dropdown menu; 'Product management', 'My profile' and 'logout'.
+- Account, is a dropdown menu witch changes based on if you are logged in or not. If the user is not logged in there are two options in the dropdown, witch are 'login' or 'register'. If the user is logged in there is three options in the dropdown menu; 'Product management', 'My profile' and 'logout'
+
+. When logged in as admin the Product management takes you to the product management page, witch is an add product page
+
+
 
 
 
@@ -78,4 +82,57 @@ It consists of several integral links to allow the user ease of navigation.
 
  ### Footer
 
+The footer is divided into three sections
+- Contact details, with Martas work adderss and work mobile number.
+- Social media, there is a link to Martas instagram and facebook accounts for her m_beauty business.
+- Opening hours of the salon.
 
+
+
+### The Home Page
+
+- Carousel
+The background on the home page is designed around M_beauty logo, and the first section of the home page is a carousel. The first image in the carousel is martas logo so when the user first visits the page they are greeted with the illusion of a cohesive full image but the carousel changes photos to three more images of some of martas work, but the theme stays the same through out the site.
+
+
+- The Price List
+An integral part of any competitive beauty is keeping your clients and future clients informed of your current rates. For this reason I thought it was important enough to dedicate it a portion of the homepage. The price list carries a similar theme to the homepage so it is not a visual problem. 
+
+
+- Services
+The services are in another carousel. Instead of listing all or any services I thought it would be more visually appealing and save space on the homepage as it has a dedicated page where they are located.
+
+
+### Gallery 
+
+This is a simple gallery page that showcases some of Martas best work. Most of the images are the same as on the social media, but this gives the option for quick access for any user or a chance for the possibility of an older client who dose not have social media to see examples of previous clients.
+
+
+
+### Products
+
+The products page offers to showcase the beauty products offered by M Beauty witch are all handcreams, and a few gift set.
+A product is made up of the product image, the price and the stock level. 
+Once a product is clicked you are redirected to the product detail page.
+
+
+## Product Detail
+
+On the product detail page you have a full size image on the left of the screen and on th right of it is product title, the price, the product description and a wighet to choose the quantity. 
+Below that is two buttons; Keep shopping, which takes you back to the products page. The other button is Add to cart which once clicked it triggers a small bag summary in the right of the screen and this button also triggers the bag icon to update with the price of the bag.
+
+For admin there is also an edit and a delete button.
+
+- The edit button takes you to the product management page where the item is filled out waiting to edit.
+
+- The delete button, brings ypu tp the products delete page witch is just gives you the option to delete or to cancel. If cancel is selected you are redirected back to the product detail page.
+If delete is selected the product is deleted and you are redirected to the products page.
+
+
+
+### Price List
+
+The price list is something a user is likley to want to see upon visiting thee site, and is such an important part of the business and it is nice for the user to have access from any page as its on the navbar. The price list is a similar theme to the background so the price list page looks visually appealing.
+
+
+### Services
