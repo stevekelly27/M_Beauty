@@ -5,6 +5,7 @@ html {
 body {
     background: url('/media/stars.jpeg') no-repeat center center fixed;
     background-size: cover;
+    height: calc(100vh - 164px);
 } 
 
 .header-container {
@@ -32,7 +33,7 @@ body {
 }
 
 #navbar-top {
-    height: 100px;
+    height: 120px;
     background-color: hsl(286, 58%, 77%);
 } 
 
@@ -71,6 +72,8 @@ body {
 footer {
     background-color: hsl(286, 58%, 77%);
     color: white;
+    font-size: 50px;
+    justify-content: space-between;
 }
 
 
@@ -118,13 +121,13 @@ footer {
 
 /* from Bulma */
 
-/* .icon {
+.icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-} */
+}
 
 
 .cancel-change-btn {
@@ -274,7 +277,14 @@ footer {
 }
 
 
-  /* Allauth form formatting */
+
+/* media queries */
+
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+
+      /* Allauth form formatting */
   
   .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -329,11 +339,6 @@ footer {
 }
 
 
-/* media queries */
-
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
     .container {
       max-width: 80%;
     }
@@ -397,37 +402,8 @@ footer {
 }
 
 
-  @media (min-width: 992px) {
-    .sign-up-container {
-    width: 35%;
-    }
+@media (max-width: 992px) {
 
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
-    }
-}
-
-    .cancel-change-btn {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-
-
-
-/* pad the top a bit when navbar is collapsed on mobile */
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
 
     body {
         height: calc(100vh - 116px);
@@ -436,11 +412,66 @@ footer {
         width: 15rem;
         margin: auto;
     }
-}
 
-@media (min-width: 768px) {
+    .sign-up-container {
+    width: 35%;
+    }
+
+    .header-container {
+        padding-bottom: 350px;
+    }
+    
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .cancel-change-btn {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+
+    .nav-link {
+        font-size: 15px;
+        text-align: right;
+        margin-top: 10px;
+        color: hsl(286, 58%, 77%);
+    }
+
+
+    #service {
+        width: 15rem;
+        margin: auto;
+    }
+
+
+    .footer{
+        font-size: 20px;
+    }
+
+    div.card-body.contact.mt-4 {
+        font-size: 10px;
+    }
+
+    @media (max-width: 768px) {
     .sign-up-container {
     width: 50%;
     }
-}
 
+    .header-container {
+        padding-bottom: 350px;
+    }
+
+    .footer {
+        font-size: 20px;
+        height: 100px;
+        text-align: center;
+    }
+
+    }
+}

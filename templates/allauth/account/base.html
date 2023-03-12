@@ -3,7 +3,9 @@
 {% block extra_css %}
 <style>
 body > div.container-fluid.mt-auto {
-    padding-top: 35%;
+    padding-top: 50%;
+    position: fixed;
+
 }
 
 </style>
@@ -12,7 +14,7 @@ body > div.container-fluid.mt-auto {
 {% block content %}
     <div class="container header-container">
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <div class="allauth-form-inner-content">
                     {% block inner_content %}
                     {% endblock %}
@@ -21,3 +23,4 @@ body > div.container-fluid.mt-auto {
         </div>
     </div>
 {% endblock %}
+

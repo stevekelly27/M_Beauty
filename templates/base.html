@@ -47,21 +47,21 @@
       <div class="row bg-white pt-lg-2 d-flex">
           <div class="logo col-12 col-md-4 my-auto py-1 py-lg-0 text-center text-lg-left">
             <a href="{% url 'home' %}" class="main-logo-link">
-                <img src="{{ MEDIA_URL }}/M-Beauty-logo.JPG">
+                <img src="{{ MEDIA_URL }}M-Beauty-logo.JPG">
             </a>
           </div> 
           <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
             <ul class="navbar-nav flex-row justify-content-center list-unstyled text-center text-lg-right my-0">
-              <li class="nav-item mr-4 mr-md-5">
+              <!-- <li class="nav-item mr-4 mr-md-5">
                 <a class="nav-link" href="">Gallery</a>
-              </li>
+              </li> -->
               <li class="nav-item mr-4 mr-md-5">
                 <a class="nav-link" href="{% url 'products' %}">Products</a>
               </li>
-              <li class="nav-item mr-4 mr-md-5">
-                <a class="nav-link" href="">Price List</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'price_list' %}">Price List</a>
               </li>
-              <li class="nav-item mr-4 mr-md-5">
+              <li class="nav-item ml-4 ml-md-5">
                 <a class="nav-link" href="{% url 'services' %}">Services</a>
               </li>
             </ul>
@@ -131,26 +131,29 @@
 
     {% endblock %}
 
-    <div class="footer container-fluid mt-auto"> <!-- fixed-bottom -->
+    <!-- d-block d-md-none -->
+    <div class="footer container-fluid mt-auto">  
       <footer>
         <div class="row">
-            <div class="col-4">
+            <div class="col-4 d-sm-none d-md-block">
                 <div class="card-body contact mt-3">
                     <h5 class="card-title"><strong>Contact Me</strong></h5>
                     <h6 class="card-text contact">21 Innisfallen, Rookery Rd, Killarney</h6>
                     <h6 class="card-text contact">Tel: 087 765 0518</h6><br>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card-body contact mt-4">
-                    <h5 class="card-title"><strong>Follow me on my socials</strong></h5>
-                    <a class="p-4 social" href="https://www.facebook.com/mbeautymartakarpus/" target="_blank" rel="noopener"
-                    aria-label="Find us on Facebook"><i class="fa-lg fa-brands fa-facebook"></i></a>
-                    <a class="p-4 social" href="https://www.instagram.com/mbeauty_marta/?hl=en" target="_blank" rel="noopener"
-                    aria-label="Find us on Instagram"><i class="fa-lg fa-5x fa-brands fa-instagram"></i></a>
+            <div class="col-4 d-sm-none d-md-block">
+                <div class="contact mt-4">
+                    <h5 class="card-title"><strong>M Beauty socials</strong></h5>
+                </div>
+                <div class="contact mt-4">
+                    <a class="mr-1 p-4 social" href="https://www.facebook.com/mbeautymartakarpus/" target="_blank" rel="noopener"
+                    aria-label="Find us on Facebook"><i class="icon fa-brands fa-facebook fa-lg fa-5x "></i></a>
+                    <a class="ml-4 p-4 social" href="https://www.instagram.com/mbeauty_marta/?hl=en" target="_blank" rel="noopener"
+                    aria-label="Find us on Instagram"><i class="icon fa-brands fa-instagram fa-lg fa-5x "></i></a>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-sm-none d-md-block">
                 <div class="card-body contact mt-4">
                     <h5 class="card-text contact"><strong>Opening Times</strong></h5>
                     <h6 class="card-text contact">Mon - Sun: 9am - 7pm</h6><br> 
