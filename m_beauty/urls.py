@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
+from .views import error_403, error_404, error_405, error_500
 
 urlpatterns = [
     path('admin/', admin.site.urls),

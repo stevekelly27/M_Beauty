@@ -13,6 +13,6 @@ def price_list(request):
     return render(request, 'home/price_list.html')
 
 
-# def gallery(request):
-#     """ A view to return the gallery page """
-#     return render(request, 'home/gallery.html')
+def contact(request):
+    """ A view to return the contact page """
+    return render(request, 'home/contact.html')
