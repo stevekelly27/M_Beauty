@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Service
 from .forms import ServiceForm
@@ -31,6 +32,7 @@ def services(request):
         'shape_tint_services': shape_tint_services, })
 
 
+@login_required
 def add_services(request):
     """
     Function to view add services page.
@@ -67,6 +69,7 @@ def add_services(request):
     return render(request, 'services/add_services.html', context)
 
 
+@login_required
 def edit_services(request, service_id):
     """
     Function to view edit services page.
@@ -104,6 +107,7 @@ def edit_services(request, service_id):
     return render(request, 'services/edit_services.html', context)
 
 
+@login_required
 def delete_services(request, service_id):
     """
     Function to view delete services page.

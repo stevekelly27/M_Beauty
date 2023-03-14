@@ -26,6 +26,7 @@ def bag_contents(request):
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
+                'stock_level': product.stock_level
             })
 
     if (total - booking_total) > 0:

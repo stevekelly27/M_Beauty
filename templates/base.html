@@ -177,7 +177,7 @@
         </div>
     </div>
     <div class="row bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <nav class="navbar navbar-expand-lg navbar-light w-100 align-items-start">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -213,24 +213,24 @@
     {% endblock %}
 
 
-    <footer>
-        <div class="container-fluid footer-sm fixed-bottom d-none d-sm-block">
+    <!-- <footer>
+        <div class="container-fluid footer-sm d-none d-sm-block">
 
         </div>
-    </footer>
+    </footer> -->
 
     <!-- d-block d-md-none -->
-    <div class="footer container-fluid mt-auto">  
+    <div class="footer container-fluid mt-auto" >  
       <footer>
-        <div class="row">
-            <div class="col-4 d-none d-md-block">
-                <div class="card-body contact mt-3">
-                    <h5 class="card-title"><strong>Contact Me</strong></h5>
+        <div class="row align-items-center">
+            <div class="col-md-4 d-none d-md-block">
+                <div class="card-body contact my-3 d-flex flex-column">
+                    <h5><strong>Contact Me</strong></h5>
                     <h6 class="card-text contact">21 Innisfallen, Rookery Rd, Killarney</h6>
-                    <h6 class="card-text contact">Tel: 087 765 0518</h6><br>
+                    <h6 class="card-text contact">Tel: 087 765 0518</h6>
                 </div>
             </div>
-            <div class="col-4 d-none d-md-block">
+            <div class="col-12 col-md-4 d-md-block text-center">
                 <div class="contact mt-4">
                     <h5 class="card-title"><strong>M Beauty socials</strong></h5>
                 </div>
@@ -241,10 +241,10 @@
                     aria-label="Find us on Instagram"><i class="icon fa-brands fa-instagram fa-lg fa-5x "></i></a>
                 </div>
             </div>
-            <div class="col-4 d-none d-md-block">
-                <div class="card-body contact mt-4">
+            <div class="col-md-4 d-none d-md-block">
+                <div class="card-body contact my-3">
                     <h5 class="card-text contact"><strong>Opening Times</strong></h5>
-                    <h6 class="card-text contact">Mon - Sun: 9am - 7pm</h6><br> 
+                    <h6 class="card-text contact">Mon - Sun: 9am - 7pm</h6> 
                 </div>
             </div> 
         </div>   
@@ -259,4 +259,4 @@
 
     
   </body>
-</html>
+</html> 

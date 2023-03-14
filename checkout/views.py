@@ -106,7 +106,7 @@ def checkout(request):
                 qty = int(bookingOLI.quantity)
                 # https://stackoverflow.com/questions/34833000/django-change-the-value-of-a-field-for-all-objects-in-a-queryset
                 # https://docs.djangoproject.com/en/3.2/ref/models/querysets/#bulk-update
-                latest_booking = list(Booking.objects.filter(user=request.user).order_by('-  id')[:qty])
+                latest_booking = list(Booking.objects.filter(user=request.user).order_by('-id')[:qty])
                 for lb in range(qty):
                     latest_booking[lb].paid = True
                 Booking.objects.bulk_update(latest_booking, ['paid'])

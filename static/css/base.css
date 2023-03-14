@@ -5,11 +5,11 @@ html {
 body {
     background: url('/media/stars.jpeg') no-repeat center center fixed;
     background-size: cover;
-    /* height: calc(100vh - 164px); */
+    height: calc(100vh - 100px);
 } 
 
 .header-container {
-    height: 150px; /* height: 310px; */
+    padding-top: 110px;
 }
 
 .main-logo-link {
@@ -32,7 +32,7 @@ body {
     text-transform: uppercase;
 }
 
-#navbar-top {
+/* #navbar-top {
     height: 120px;
     background-color: hsl(286, 58%, 77%);
 } 
@@ -40,7 +40,7 @@ body {
 #navbar {
     height: 120px;
     background-color: hsl(286, 58%, 77%);
-} 
+}  */
 
 .nav-link {
     font-size: 20px;
@@ -74,7 +74,7 @@ body {
     text-align: center;
 }
 
-footer-sm {
+.footer-sm {
     background-color: hsl(286, 58%, 77%);
     color: white;
     font-size: 50px;
@@ -98,6 +98,20 @@ footer {
     text-align: center;
 }
 
+#add-service input {
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 90%;
+}
+
+#add-service > p:nth-child(4) > label {
+    display: block;
+}
+
+#add-service textarea {
+    max-width: 100%;
+}
+
 .action-btn,
 .action-btn:hover,
 .contact,
@@ -112,9 +126,11 @@ footer {
     text-decoration: none;
 }
 
+/*
 .sign-up-container {
     width: 95%;;
 }
+*/
 
 .header-text {
     width: 100%;
@@ -128,7 +144,7 @@ footer {
 
 
 .sign-up-container input {
-    width: 90%;
+    width: 50%;
 }
 
 
@@ -206,19 +222,26 @@ footer {
     margin: auto;
 }
 
-
+/*
 .sign-up-container {
     width: 95%;;
 }
+*/
 
 .signup, .login {
     display: flex;
 
 } 
 
-#service {
+.service {
     width: auto;
     margin: auto;
+}
+
+.service img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -417,18 +440,26 @@ footer {
 
 @media (max-width: 992px) {
 
-/* 
+    /*
     body {
         height: calc(100vh - 116px);
-    } */
-    #service {
+    }
+    */
+
+    .service {
         width: 15rem;
         margin: auto;
     }
 
-    .sign-up-container {
-    width: 35%;
+    .sign-up-container input {
+        width: 90%;
     }
+
+    /*
+    .sign-up-container {
+        width: 100%;
+    }
+    */
 
     /* .header-container {
         padding-bottom: 350px;
@@ -457,7 +488,7 @@ footer {
     }
 
 
-    #service {
+    .service {
         width: 15rem;
         margin: auto;
     }
@@ -473,42 +504,51 @@ footer {
 
     @media (max-width: 768px) {
 
+    /*
     .sign-up-container {
     width: 50%;
     }
+    */
 
+    /*
     body {
-
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+        height: calc(100vh - 100px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
     }
+    */
 
 
     .book-now-card {
         max-width: fit-content;
     }
 
-
+/*
     .carousel-container {
         padding-top: 1000px;
     }
+    */
 
     #top-nav {
         height: 210px;
         background-color: hsl(286, 58%, 77%);
     }
     
-    /* .header-container {
+     /*
+    .header-container {
+        padding-top: 110px;
+    }
+
+    .header-container {
         padding-top: 450px;
     } */
     
-    body > div.container-fluid.mt-auto {
+    /* body > div.container-fluid.mt-auto {
         padding-top: 5%;
-    }
+    } */
 }
     
     @media (max-width: 575px){
@@ -518,10 +558,11 @@ footer {
             background-color: hsl(286, 58%, 77%);
         }
         
-
+/*
         .book-now {
             padding-top: 800px;
         }
+        */
 
 
     /* .nav-link {    

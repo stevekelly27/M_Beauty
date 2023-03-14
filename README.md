@@ -118,14 +118,14 @@ Once a product is clicked you are redirected to the product detail page.
 
 ## Product Detail
 
-On the product detail page you have a full size image on the left of the screen and on th right of it is product title, the price, the product description and a wighet to choose the quantity. 
+On the product detail page you have a full size image on the left of the screen and on th right of it is product title, the price, the product description and a wiget to choose the quantity. 
 Below that is two buttons; Keep shopping, which takes you back to the products page. The other button is Add to cart which once clicked it triggers a small bag summary in the right of the screen and this button also triggers the bag icon to update with the price of the bag.
 
 For admin there is also an edit and a delete button.
 
 - The edit button takes you to the product management page where the item is filled out waiting to edit.
 
-- The delete button, brings ypu tp the products delete page witch is just gives you the option to delete or to cancel. If cancel is selected you are redirected back to the product detail page.
+- The delete button, brings you tp the products delete page witch is just gives you the option to delete or to cancel. If cancel is selected you are redirected back to the product detail page.
 If delete is selected the product is deleted and you are redirected to the products page.
 
 
@@ -136,3 +136,38 @@ The price list is something a user is likley to want to see upon visiting thee s
 
 
 ### Services
+
+The services page provides the range of services that are offered. Each service has an image relating to the service, has a brief summary of each of the services and the price of the service.
+Below is a 'Book now' button that is a link to the bookings page where a user can make the booking but the user must be logged in to be able to view that page.
+If user is admin there is full crud capabilities.
+- Add service
+    The add service button is located at the top of the page. This brings me to the add service form page.
+    This form has five input fields - service name, service type, descrioption, price and image.
+    This allows admin ease of adding a new booking from the website.
+
+    
+
+
+
+### Bookings.
+
+Once a user has logged in they are taken frpm the services page to the the bookings page. The user is greeted with your username and is informed how to make your booking, that you have the ability to to view your upcoming and past bookings and that you have the ability to cancel upcoming bookings.
+There are two buttons on the bookings page:
+
+#### View bookings
+
+- view bookings, which opens up a hidden dropdown of a list that is broken into:
+ - client, which displays the first and last name of the name provided in the bookings form.
+ - service, which displays the service selected in the bookings form.
+ - appiontment, which displays the date and the time of appointment.
+ - cancel, which gives the user, and admin the ability to cancel appointment as long as the date has not passed.
+
+
+#### Make booking
+
+The make booking form has five input fields for a site user. First and last name, the date, the time and the service. 
+If logged in as admin there is another field of user. 
+If confirm is clicked, the booking is saved, the user is brought back to the bookings page, where the user can view the booking to view the booking details. 
+Also a success message of "added booking deposit to your bag" and you have the bag summary attacthed to it in the top right corner of the screen, with a link to go to secure checkout for ease of navigation for the user.
+
+
