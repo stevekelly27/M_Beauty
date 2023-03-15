@@ -285,11 +285,18 @@ When the form has been submitted, the pay now button converts into a spinner and
 On the right of the screen the user has a summary of their order and a grand total.
 
 
+![36EFABA5-76D7-4BA7-9BAA-02DC153A94D8](https://user-images.githubusercontent.com/93382818/225243719-f8de8a76-6d73-4c7b-843b-e6fbab85ec49.jpeg)
+
+![5D123F74-0694-4C6F-940F-62A969F2A05E](https://user-images.githubusercontent.com/93382818/225243814-43a43d43-76f3-4315-815d-2bb70fbe57d1.jpeg)
+
 ### Checkout success
 
 The checkout success page starts with a thank you to the customer for their order.
 it contains all the information passed in from the checkout form.
 A success message appears in the top right of the screen confirming that the order was successfully processed, and that an email will be sent to the one provided.
+
+
+![7F576940-35B2-497C-9F1B-7E592B7AFAB3](https://user-images.githubusercontent.com/93382818/225243892-14546b70-f4cd-4559-93d7-43813deb8de3.jpeg)
 
 
 ### Authentication
@@ -298,16 +305,15 @@ All authentication templates are from the all-auth library
 
 - Register
 
+![A89505B0-7C16-4EF6-8FFD-3CD642E0556D](https://user-images.githubusercontent.com/93382818/225245729-4aa848bd-b5b9-49a8-8cf0-8cdde2d14c89.jpeg)
 
 - Login
 
+![C3945EBF-5248-4663-8770-10C31CFCDED6](https://user-images.githubusercontent.com/93382818/225245828-7955be77-7971-468d-a6f7-46ac3d01ffbf.jpeg)
 
 - Logout 
 
-
-- Confirm email
-
-
+![ACACC1DD-4884-4A86-9527-2F2BBDEF947B_4_5005_c](https://user-images.githubusercontent.com/93382818/225245908-4c97aa49-e8bb-47b3-b8ed-2ddfdc2d7c5a.jpeg)
 
 ## Future Features 
 
