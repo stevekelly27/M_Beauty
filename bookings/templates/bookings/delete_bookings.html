@@ -29,7 +29,7 @@
                 <p>{{ bookings.service }}</p>
                 <p>on {{ bookings.date }} at {{ bookings.get_time_display }}?</p>
                 <button class="btn action-btn mb-3 px-4" type="submit">Yes</button>
-                <a href="{{ bookings_url }}" class="btn action-btn mb-3 px-4 mx-2">No</a>
+                <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">No</a>
               </form>
           </div>
         </div>

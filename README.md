@@ -55,9 +55,8 @@ It consists of several integral links to allow the user ease of navigation.
 
 - The logo on the left, witch is Martas brand logo is featuired throughout the site also doubles as a return to home button.
 
-
-
-- Gallery, witch takes you to a dedicated page of Martas best work.
+- Contact, witch takes you to to a page for the contact details for the M Beauty business,
+  as when a user is on a small screen the footer which contains the contact deatils is shrunken down to only include M Beauty social links.
 
 - Products, brings you to beauty related products.
 
@@ -65,47 +64,90 @@ It consists of several integral links to allow the user ease of navigation.
 
 - Services, where the user chooses a service to make a booking.
 
+![092F1ACB-CF23-4D66-8214-A916A7CAF3CA_4_5005_c](https://user-images.githubusercontent.com/93382818/224984301-085458bc-e2cb-4b04-b9ef-47f0bbfd8ca4.jpeg)
 
-- Account, is a dropdown menu witch changes based on if you are logged in or not. If the user is not logged in there are two options in the dropdown, witch are 'login' or 'register'. If the user is logged in there is three options in the dropdown menu; 'Product management', 'My profile' and 'logout'
+- Account,
+  The account dropdown menu changes based on if you are logged in or not. 
+  If the user is not logged in there are two options in the dropdown, which are 'login' or 'register'. 
+  If the user is logged in there are two options in the dropdown, which are 'My profile' and 'Logout
 
-. When logged in as admin the Product management takes you to the product management page, witch is an add product page
+  If the admin is not logged in there are two options in the dropdown, which are 'login' or 'register'.
+  If the admin is logged in there are four options in the dropdown menu, which are 'Product management', 'Service management', 'My profile' and 'Logout'
+
+  - Product management
+    When logged in as admin the Product management redirects to the add product page.
+
+  - Service management
+    When logged in as admin the Product management redirects to the add services page.
+
+![AAA43EC7-1D64-49C7-A736-4698FF5AB9BD_4_5005_c](https://user-images.githubusercontent.com/93382818/224984471-0c94d876-ee0a-49f2-9521-df13dcb3c3af.jpeg)
+
+![71015FA6-0918-4EEE-8106-7B2727FF6BF6_4_5005_c](https://user-images.githubusercontent.com/93382818/224985116-dc493a4c-1021-419c-8715-75f27a132cd0.jpeg)
+
+  - My profile
+    My profile takes you to the profile page.
+    This page consists of the users/admins delivery details information that get saved when the user completes a purchace and checks out.
+    Beneth the saved delivery details is a button to update the information.
+    On the right on the page is a history of all previous purchaces.
+    Displayed is a table of a list of orders that have been made.
+    It is displayed as: 'Order number', 'Date', 'Items' and 'Order total'.
+    The Order number doubles as a link to see the full order information.
 
 
+![757531F7-B757-492E-AB75-87A0075FB7DC](https://user-images.githubusercontent.com/93382818/224985938-ec459d26-a870-42bd-8a9e-5a78e1840afb.jpeg)
+
+  - Order Information
+    The order information page concists of the full order history, the full delivery details and the billing information.
+    Beneth is a button labled 'back to profile' which, brings you back to thhe profile page.
+    In the top right of the screen there is an alert notification, detailing that this is a past order,
+    the order confirmation number and a confirmation that an email was sent on the order date.
 
 
+![9C062912-86E8-4FD3-BC0C-AEB70A5CB102](https://user-images.githubusercontent.com/93382818/224986221-5f84ec1d-3e3d-4e32-994a-b592b972939a.jpeg)
 
-- Shopping bag, is in the form of the icon representing the bag total and is a link to take you to the bag once ready to checkout with a product or a booking deposit.
+- Shopping bag, is in the form of a font awesome icon representing the bag total and is a link to take you to the bag once ready to checkout with a product or a booking deposit.
 
 
-
+![BB814889-D88C-4A92-89DD-FC5222C9516D](https://user-images.githubusercontent.com/93382818/224986499-7edda0b0-3b6a-4a0f-b4d9-312f7f8cd85f.jpeg)
 
 
  ### Footer
 
-The footer is divided into three sections
+The footer is divided into three sections, but the footer shrinks down to just the middle section with the social media links.
+The three sections are
 - Contact details, with Martas work adderss and work mobile number.
 - Social media, there is a link to Martas instagram and facebook accounts for her m_beauty business.
 - Opening hours of the salon.
 
+![127D4FFC-3219-44B3-B362-505BC3FFA26D_4_5005_c](https://user-images.githubusercontent.com/93382818/224987006-e7b8fb67-428b-4918-8f3f-fb426890c9c6.jpeg)
+
+![93E7B6FD-FA03-445E-9E88-AFDBED000A43_4_5005_c](https://user-images.githubusercontent.com/93382818/224987075-2d2f9b5a-5715-49af-aca5-054295a61907.jpeg)
 
 
 ### The Home Page
 
 - Carousel
 The background on the home page is designed around M_beauty logo, and the first section of the home page is a carousel. The first image in the carousel is martas logo so when the user first visits the page they are greeted with the illusion of a cohesive full image but the carousel changes photos to three more images of some of martas work, but the theme stays the same through out the site.
+This carousel is not visible on small screens.
+
+![97533761-861F-472F-818A-9E1A85CDBBEA](https://user-images.githubusercontent.com/93382818/224987350-2a3db7a4-1be5-407a-8884-782c2b3a697e.jpeg)
+
+
+
+- Services
+The services are listed in cards which provide a short descrpion of each service and a link that takes you to the booking page. 
+
+
+![621683C3-A051-43F5-8021-BEB205DFC2CD](https://user-images.githubusercontent.com/93382818/224988899-a65c612b-8ea6-4cef-9cbf-690b34e91308.jpeg)
 
 
 - The Price List
 An integral part of any competitive beauty is keeping your clients and future clients informed of your current rates. For this reason I thought it was important enough to dedicate it a portion of the homepage. The price list carries a similar theme to the homepage so it is not a visual problem. 
 
 
-- Services
-The services are in another carousel. Instead of listing all or any services I thought it would be more visually appealing and save space on the homepage as it has a dedicated page where they are located.
+### Contact
 
-
-### Gallery 
-
-This is a simple gallery page that showcases some of Martas best work. Most of the images are the same as on the social media, but this gives the option for quick access for any user or a chance for the possibility of an older client who dose not have social media to see examples of previous clients.
+The contact page is just the contact information and opening hours as when the footer is on a mobile view the contact information and oprning hours do not display.
 
 
 
@@ -116,43 +158,81 @@ A product is made up of the product image, the price and the stock level.
 Once a product is clicked you are redirected to the product detail page.
 
 
+![5CA81BF2-0277-4FE6-A866-B6FEB72F7C5C](https://user-images.githubusercontent.com/93382818/224989232-78e9c1b0-9248-4e7b-8908-0393d400443c.jpeg)
+
+
 ## Product Detail
 
-On the product detail page you have a full size image on the left of the screen and on th right of it is product title, the price, the product description and a wiget to choose the quantity. 
+On the product detail page you have a full size image on the left of the screen and on th right of it is product title, the price, the product description and a wiget to choose the increment or decrement the quantity. 
 Below that is two buttons; Keep shopping, which takes you back to the products page. The other button is Add to cart which once clicked it triggers a small bag summary in the right of the screen and this button also triggers the bag icon to update with the price of the bag.
+
+![1D27942C-1F0B-4977-BFD3-10EA0B56D07E](https://user-images.githubusercontent.com/93382818/224989612-c12b000a-bede-428f-a81f-82e17dd6b82f.jpeg)
+
 
 For admin there is also an edit and a delete button.
 
 - The edit button takes you to the product management page where the item is filled out waiting to edit.
 
-- The delete button, brings you tp the products delete page witch is just gives you the option to delete or to cancel. If cancel is selected you are redirected back to the product detail page.
-If delete is selected the product is deleted and you are redirected to the products page.
+![EC4057FB-30BF-42ED-AF9A-C4B7F07862D4](https://user-images.githubusercontent.com/93382818/224989971-5ef03f55-37ed-46c0-82d3-f2667f864a36.jpeg)
 
-
+- The delete button, if delete is selected the product is deleted and you are redirected to the products page.
 
 ### Price List
 
 The price list is something a user is likley to want to see upon visiting thee site, and is such an important part of the business and it is nice for the user to have access from any page as its on the navbar. The price list is a similar theme to the background so the price list page looks visually appealing.
 
+![5EEE0533-66B4-413D-AFE0-E6D79B8D81D6](https://user-images.githubusercontent.com/93382818/225218016-98d7b78b-620d-4094-bf3c-30d39f628a46.jpeg)
 
 ### Services
 
 The services page provides the range of services that are offered. Each service has an image relating to the service, has a brief summary of each of the services and the price of the service.
 Below is a 'Book now' button that is a link to the bookings page where a user can make the booking but the user must be logged in to be able to view that page.
 If user is admin there is full crud capabilities.
+
+![59F6017D-A2EF-49B1-99AD-BF84D854D6E4](https://user-images.githubusercontent.com/93382818/225224390-fbc9144a-c28f-49e5-8175-58fd87230433.jpeg)
+
 - Add service
-    The add service button is located at the top of the page. This brings me to the add service form page.
+    The add service button is located at the top of the page. This brings admin to the add service form page.
     This form has five input fields - service name, service type, descrioption, price and image.
     This allows admin ease of adding a new booking from the website.
+    All fields are required except for the image field.
+    If a field is missing or incorrectly filled out, they are notified by a pop-up message.
+    There is two buttons at the bottom of the form:
+    Confirm saves the form and adds the service to the services page.
+    Cancel redirects back to the services page.
 
-    
 
+![7B172215-758B-4CA1-BA0F-9856A716377A](https://user-images.githubusercontent.com/93382818/225224788-e00c2975-76ea-4fac-a959-7a178b9241ef.jpeg)
+
+
+- Edit service
+    The edit button is located on each of the services. This brings admin to the edit service page.
+    This page is a pre-populated form with the same fields as the add service pag.
+    If a field is missing or incorrectly filled out, they are notified by a pop-up message.
+
+
+![9384E8E5-64F3-4C35-B444-33FFF6D64FAD](https://user-images.githubusercontent.com/93382818/225224492-227f1969-ee99-493b-80e2-f2b3a9658045.jpeg)
+
+- Delete service
+    The delete button is located alongside the edit button, and brings. admin to the delete service page.
+    A question is promped asking you if you are sure you want to delete (service name)
+    There are two buttons beneth this; yes and no.
+    Yes deletes the service and redirects back to the services page.
+    No just redirects again back to the services page.    
+
+
+![307F2258-85BC-41FA-88C9-D05BF5F041B2_4_5005_c](https://user-images.githubusercontent.com/93382818/225224572-4507c348-e08f-4985-a5fd-27b570b4a051.jpeg)
 
 
 ### Bookings.
 
+The booking system in this website is to book a timeslot and if the booking from is valid and the timeslot is avalable the booking will be saved. A site user will be directed to the checkout and pay a booking deposit fee of €5. If admin makes the booking the booking will be saved to the view booings table.
+
+#### Bookings page
+
 Once a user has logged in they are taken frpm the services page to the the bookings page. The user is greeted with your username and is informed how to make your booking, that you have the ability to to view your upcoming and past bookings and that you have the ability to cancel upcoming bookings.
-There are two buttons on the bookings page:
+
+![C0071574-5695-45F9-ABAD-E02BA92BE1A2](https://user-images.githubusercontent.com/93382818/225227142-2f7d4106-1621-4b32-9157-c18c529b743d.jpeg)
 
 #### View bookings
 
@@ -163,11 +243,265 @@ There are two buttons on the bookings page:
  - cancel, which gives the user, and admin the ability to cancel appointment as long as the date has not passed.
 
 
+![BD8AB22F-4739-4ABB-9B98-741CCE4859EA](https://user-images.githubusercontent.com/93382818/225227381-f5d79d44-b56b-49e5-acbc-f6971af4f873.jpeg)
+
 #### Make booking
 
+The make booking form is for a user or admin the ability to book a timeslot with Marta.
 The make booking form has five input fields for a site user. First and last name, the date, the time and the service. 
 If logged in as admin there is another field of user. 
+There are two buttons on the bottom of the form. Confirm and cancel.
 If confirm is clicked, the booking is saved, the user is brought back to the bookings page, where the user can view the booking to view the booking details. 
-Also a success message of "added booking deposit to your bag" and you have the bag summary attacthed to it in the top right corner of the screen, with a link to go to secure checkout for ease of navigation for the user.
+Also a success message of "added booking deposit to your bag" and you have the bag summary attched to it in the top right corner of the screen, with a link to go to secure checkout for ease of navigation for the user.
+If cancel is selected the user is redirected back to the bookings page.
+
+![B2931672-53E6-4E80-A412-9D8C3E65AA0C](https://user-images.githubusercontent.com/93382818/225227714-c0c37529-5970-4b34-bf3c-92571267642c.jpeg)
+
+
+#### Cancel booking
+
+From the view bookings table if cancel is selected you are directed to the cancel bookings page where you are given the opertunity to return to the bookings page if clicked accidentally or to confirm cancellation.
+You are also shown the dtae and time of the booking in question.
+
+![5FEEE34F-EA4E-4AD4-9147-079333D82C9E](https://user-images.githubusercontent.com/93382818/225228374-b5e6cccb-1433-4825-8208-249f4090d2b8.jpeg)
+
+### Shopping Bag 
+
+If a product or booking is in the shopping bag the user has a clear image of the item, the name, the price,
+the ability to increment or decrement the order and the subtotal.
+Two buttons are located under the order on medium and large screens and the buttons appear on top od the order on small screens.
+There is a keep shopping button that redirects to the products page, and secure checkout button that brings you to the checkout page.
+
+
+![EE955930-77FC-4DB5-B56D-CCD98A8EAB11](https://user-images.githubusercontent.com/93382818/225229510-acd05d5e-5c73-4680-90b2-f99ceaef9bd6.jpeg)
+
+### Checkout
+
+The checkout page has a form for the users details, shipping adderss and card details.
+This is where the users info will get saved and be added to the details in my profile.
+The card element is injected by the stripe API and uses a payment system that is fully PCI compliant.
+The same API also handles any errors using the allocated div to display them to the user.
+When the form has been submitted, the pay now button converts into a spinner and displays an overlay to show it is processing using a js function.
+On the right of the screen the user has a summary of their order and a grand total.
+
+
+### Checkout success
+
+The checkout success page starts with a thank you to the customer for their order.
+it contains all the information passed in from the checkout form.
+A success message appears in the top right of the screen confirming that the order was successfully processed, and that an email will be sent to the one provided.
+
+
+### Authentication
+
+All authentication templates are from the all-auth library
+
+- Register
+
+
+- Login
+
+
+- Logout 
+
+
+- Confirm email
+
+
+
+## Future Features 
+
+- The contact page
+Due to time constraints I have not made the contact page.
+All informaation about the business is in the social media accounts, including the contact details and opening hours.
+It is disabled at the moment.
+
+- Stripe payments
+Stripe payments are still example payments, I will 
+
+
+## Bugs/Fixes
+
+## Deployment
+
+#### GitHub
+
+- Create a new reposiory in GitHub.
+
+- Create a new workspace.
+
+- pip3 install django
+
+- django-admin startproject PROJECT_NAME
+
+- toutch .gitignore
+
+- create superuser
+
+- pip3 install django-allauth
+
+- make driectories for templates, static and media files with mkdir
+
+- python3 manage.py startapp APP_NAME
+
+- pip3 install pillow to install supporting libraries
+
+- pip3 install gunicorn
+
+- pip3 install dj_database_url 
+
+- pip3 install psycopg2
+
+- pip3 freeze > requirements.txt
+
+- python3 manage.py makemigrations 
+
+- python3 manage.py migrate
+
+- python3 manage.py runserver to test server locally
+
+#### Heroku
+
+- Create a new Heroku app by clicking new o thr top right of the screen
+
+- Give the app a unique name
+
+- Select the nearest location
+
+- Add Database to the Heroku app
+
+- Go to seettings and reveal config vars and add SECRET_KEY and paste the value from settings.py in gitpod workspace
+
+
+#### AWS S3 Bucket
+
+- Create a new S3 bucket by clicking on storage and then S3
+
+- Give the bucket a unique name
+
+- Select nearest location
+
+- Select 'ACLS enabled'
+
+- Unselect 'Block all public access' and tick the axknowledgment that this will make it public
+
+- Open created bucket
+
+- In the S3 bucket properties enable static web hosting
+
+- In the S3 bucket permissions edit the CORS configuration to:
+ [
+    {
+        "AllowedHeaders": [
+        "Authorization"
+        ],
+        "AllowedMethods": [
+        "GET"
+        ],
+        "AllowedOrigins": [
+        "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+
+- Edit the bucket policy
+
+    - click on policy generator 
+    - select 's# bucket polict' as policy type 
+    - enter "*" in the principlr text box
+    - from s3:action menu select 's3GetObject
+    - enter arn from bucket policy 
+    - add statement
+    - generate policy
+    - copy the policy and paste it in the buckey policy
+    - in the same text box add "/*" to the end of the resource key and save
+    - edit access control lost and enable 'list' for everyone and save
+
+
+- Create AWS group and static file user
+
+    - click services and select IAM
+    - create user group
+    - create permissions policy for the new user group
+    - attach policy to the user group
+    - create a user and download the Access key ID and the Secret access key
+
+
+- Install packages in gitpod required to use AWS S3 bucket in django
+
+    pip3 install boto3
+    pip3 install django-storages
+
+- add storages to installed apps in settings.py 
+
+- at the top of your settings.py file set:
+    - SECRET_KEY = os.environ.get("SECRET_KEY")
+    - DEBUG = "DEVELOPMENT" in os.environ
+
+- add a conditional setting for databases to  link up the Heroku Postgres server when in production and SQLite3 when developing locally
+
+- tell Django to where to store media and static files 
+
+- import setting and static functions
+
+- add heroku app url into allowed hosts at the top of settings.py
+
+- link S3 Bucket to Django Project
+
+- create Procfile at the top level of the file structure containing 'web: gunicorn PROJECT_NAME.wsgi'
+
+- make an initial commit and push the code to the GitHub Repository
+
+- add AWS Keys to Heroku Config Vars
+
+- add the USE_AWS variable to Heroku Config Vars and set it to True
+
+- create a file call "Custom_storages.py" 
+
+- set up Heroku for use via the console
+
+    - heroku login -i
+    - enter username 
+    - password is the API key from account settings in heroku
+    - get app name from heroku with'heroku apps'
+    - set heroku remote with 'heroku git:remote -a
+    - add commit and push to github
+    - push to heroku with 'git push heroku main'
+
+## Technologies Used
+
+- Django
+Django was used as the python framework in the project.
+
+- HTML
+HTML was the base language used to lay out the skeleton of all templates.
+
+- CSS
+Custom CSS is used to style the page and make the appearance look 'prettier' for the client.
+
+- Python
+The packages installed for the project can be found in the requirements.txt
+
+- Javascript
+I have used Javascript to manipulate the DOM and communicate with the backend increment and decrement quantity and for toasts.
+
+- SQLlite3
+Was used during development as a database to test models.
+
+- Bootstrap
+I am using bootstrap v4.4.1 and it was heavily implemented.
+
+- Font awesome
+Icons used in the navbar and footer.
+
+- Stripe
+Used to handle payments.
+
+- AWS S3
+Used to store static and media files.
+
+- Heroku
+Used as platform for final deployed version of the site.
 
 

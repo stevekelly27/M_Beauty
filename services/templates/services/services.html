@@ -27,10 +27,10 @@
         {% for service in gel_nail_services %}
         <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/glitter-nails.jpg" class="card-img-top" alt="glitter gel nails">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="glitter gel nails">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">All lengths and designs included!</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -41,13 +41,14 @@
                 </div>
             </div>
         {% endfor %}
+
         {% for service in shellac_services %}
             <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/shellac.JPG" class="card-img-top" alt="...">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="shellac nails">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Gel polish applied on natural nails only.</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -61,10 +62,10 @@
         {% for service in manicure_services %}
             <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/manicure2.jpg" class="card-img-top" alt="...">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="manicured nails">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">With strengthener</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -75,15 +76,14 @@
                 </div>
             </div>
         {% endfor %}
-    <!-- </div> -->
-    <!-- <div class="row"> -->
+
         {% for service in brow_services %}
             <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/brow-lamination2.jpeg" class="card-img-top" alt="...">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="laminated brow image">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Brow perming, changes the structure of the hair, lasts 3-6 weeks. (Aftercare is crucial!)</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -97,10 +97,10 @@
         {% for service in henna_brow_services %}
             <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/eyebrows1.JPG" class="card-img-top" alt="...">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="henna applied on brows">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Longer lasting nourishing tint, lasting 4-12 days on the skin and 6 weeks on the hair. (Minimal aftecare)</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -114,10 +114,10 @@
         {% for service in shape_tint_services %}
             <div class="col-12 py-1 col-sm-6 py-sm-auto col-md-4">
                 <div class="service card m-auto m-sm-1">
-                    <img src="{{ MEDIA_URL }}/brow-shape-tint2.jpeg" class="card-img-top" alt="...">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="shaped and tinted eyebrows">
                     <div class="card-body">
                     <h5 class="card-title"><strong>{{ service.name }}</strong></h5>
-                    <p class="card-text">Gel polish applied on natural nails only.</p>
+                    <p class="card-text">{{ service.description }}</p>
                     <p>€{{ service.price }}</p>
                     {% if user.is_superuser %}
                     <a href="edit/{{ service.id }}" class="text-decoration-none edit-delete-link"><strong>Edit | </strong></a>
@@ -127,8 +127,9 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
-        
+        {% endfor %}  
+
+
     </div>
 </div>
 

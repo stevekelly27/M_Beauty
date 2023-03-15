@@ -34,6 +34,18 @@
        var itemId = $(this).data('item_id');
        var stockLevel = $(this).data('stock_level');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       
+       //my data-counter attribute to be implemented
+       /*
+       if ($(`.input-group-${itemId} .id_qty_${itemId}`).data('counter') !== 'undefined') {
+            var curcounter = $(`.input-group-${itemId} .id_qty_${itemId}`).data('counter')
+            var inccounter = curcounter + 1
+            $(`.input-group-${itemId} .id_qty_${itemId}`).attr("data-counter", inccounter)
+            //maintain state change
+            //check against data attr of stock_level
+       }
+       */
+
        var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
        var currentValue = parseInt($(closestInput).val());
        $(closestInput).val(currentValue + 1);
@@ -46,6 +58,18 @@
        var itemId = $(this).data('item_id');
        var stockLevel = $(this).data('stock_level');
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+
+       //my data-counter attribute to be implemented
+       /*
+       if ($(`.input-group-${itemId} .id_qty_${itemId}`).data('counter') !== 'undefined') {
+            var curcounter = $(`.input-group-${itemId} .id_qty_${itemId}`).data('counter')
+            var deccounter = curcounter - 1
+            $(`.input-group-${itemId} .id_qty_${itemId}`).attr("data-counter", deccounter)
+            //maintain state change
+            //check against data attr of stock_level
+       }
+       */
+
        var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
        var currentValue = parseInt($(closestInput).val());
        $(closestInput).val(currentValue - 1);

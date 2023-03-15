@@ -30,8 +30,7 @@ body > div.container-fluid.mt-auto {
         <div class="card-header page-card-header h2 rounded-0">Bookings</div>
         <div class="card-body page-card-body fs-6 p-0 mb-0 pt-4">
             <p class="lead">Welcome {{ user.username|title }}</p>
-            <p>This is your bookings portal.
-            <p>From this portal you will be able to make bookings and view existing bookings.
+            <p>From here you will be able to make bookings and view existing bookings.
             <p>You will also be able to cancel any upcoming bookings.</p>
             <a href="{% url 'add_bookings' %}" class="btn action-btn mb-3 px-4 mx-2">Make booking</a>
             <a href="#collapse-bookings" class="btn action-btn mb-3 px-4 mx-2" data-toggle="collapse"

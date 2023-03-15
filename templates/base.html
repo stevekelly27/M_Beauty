@@ -43,66 +43,6 @@
     <title>M Beauty {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-   <!-- <header id="navbar-top" class="container-fluid fixed-top">
-      <div class="row bg-white pt-lg-2 d-flex">
-          <div class="logo col-12 col-md-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-            <a href="{% url 'home' %}" class="main-logo-link">
-                <img src="{{ MEDIA_URL }}M-Beauty-logo.JPG">
-            </a>
-          </div> 
-          <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
-            <ul class="navbar-nav flex-row justify-content-center list-unstyled text-center text-lg-right my-0">
-              <li class="nav-item mr-4 mr-md-5">
-                <a class="nav-link" href="{% url 'products' %}">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'price_list' %}">Price List</a>
-              </li>
-              <li class="nav-item ml-4 ml-md-5">
-                <a class="nav-link" href="{% url 'services' %}">Services</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-4 my-auto py-1 py-lg-0">
-              <ul class="list-inline list-unstyled text-center text-lg-center my-0">
-                  <li class="list-inline-item dropdown">
-                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div class="text-center">
-                              <div><i class="fas fa-user fa-lg my-2"></i></div>
-                              <p class="my-0">My Account</p>
-                          </div>
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                          {% if request.user.is_authenticated %}
-                              {% if request.user.is_superuser %}
-                                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                              {% endif %}
-                              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                          {% else %}
-                              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                          {% endif %}
-                      </div>
-                  </li>
-                  <li class="list-inline-item">
-                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
-                          <div class="text-center">
-                              <div><i class="fas fa-shopping-bag fa-lg my-2"></i></div>
-                              <p class="my-0">
-                                  {% if grand_total %}
-                                      ${{ grand_total|floatformat:2 }}
-                                  {% else %}
-                                      $0.00
-                                  {% endif %}
-                              </p>
-                          </div>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </header> -->
   <header class="container-fluid fixed-top">
     <div id="topnav" class="row bg-white pt-lg-auto d-none d-lg-flex">
         <div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -132,12 +72,11 @@
         </div>
         <div class="col-12 col-lg-4 my-0 py-1 py-lg-0">
             <ul class="list-inline list-unstyled text-center text-lg-right my-0 position-relative" style="
-   
-                                                                                                    transform: translateY(-10%); /* W3C */
-                                                                                                    -webkit-transform: translateY(-10%); /* Safari &amp; Chrome */
-                                                                                                    -moz-transform: translateY(-10%); /* Firefox */
-                                                                                                    -ms-transform: translateY(-10%); /* Internet Explorer */
-                                                                                                    -o-transform: translateY(-10%); /* Opera */
+                                                                                                    /* transform: translateY(-10%); /* W3C */
+                                                                                                    /* -webkit-transform: translateY(-10%); */ /* Safari &amp; Chrome */
+                                                                                                    /* -moz-transform: translateY(-10%); */ /* Firefox */
+                                                                                                    /* -ms-transform: translateY(-10%); */ /* Internet Explorer */
+                                                                                                    /* -o-transform: translateY(-10%); */ /* Opera */
                                                                                                 ">
                 <li class="list-inline-item dropdown">
                     <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,6 +89,7 @@
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                <a href="{% url 'add_services' %}" class="dropdown-item">Service Management</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -212,14 +152,6 @@
 
     {% endblock %}
 
-
-    <!-- <footer>
-        <div class="container-fluid footer-sm d-none d-sm-block">
-
-        </div>
-    </footer> -->
-
-    <!-- d-block d-md-none -->
     <div class="footer container-fluid mt-auto" >  
       <footer>
         <div class="row align-items-center">
@@ -232,7 +164,7 @@
             </div>
             <div class="col-12 col-md-4 d-md-block text-center">
                 <div class="contact mt-4">
-                    <h5 class="card-title"><strong>M Beauty socials</strong></h5>
+                    <h5 class="card-title"><strong>Follow me on:</strong></h5>
                 </div>
                 <div class="contact mt-4">
                     <a class="mr-1 p-4 social" href="https://www.facebook.com/mbeautymartakarpus/" target="_blank" rel="noopener"

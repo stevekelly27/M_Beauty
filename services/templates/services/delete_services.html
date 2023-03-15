@@ -21,7 +21,7 @@
                 <p>Are you sure you want to delete</p>
                 <p>{{ service.name }}?</p>
                 <button class="btn action-btn mb-3 px-4" type="submit">Yes</button>
-                <a href="{{ services_url }}" class="btn action-btn mb-3 px-4 mx-2">No</a>
+                <a href="{% url 'services' %}"  class="btn action-btn mb-3 px-4 mx-2">No</a>
               </form>
           </div>
         </div>

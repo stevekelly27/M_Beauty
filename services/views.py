@@ -23,6 +23,10 @@ def services(request):
         service_type__contains='HENNA').order_by('name')
     shape_tint_services = Service.objects.filter(
         service_type__contains='SHAPE_TINT').order_by('name')
+    # return render(request, 'services/services.html', {
+    #     'gel_nail_services': gel_nail_services
+    #     })
+
     return render(request, 'services/services.html', {
         'gel_nail_services': gel_nail_services,
         'shellac_services': shellac_services,
@@ -45,13 +49,13 @@ def add_services(request):
     """
 
     if request.method == "POST" and request.user.is_superuser:
-        form = ServiceForm(request.POST)
+        form = ServiceForm(request.POST, request.FILES)
         context = {
             'form': form
         }
         if form.is_valid():
             form.save()
-            messages.success(
+            messages.info(
                 request,
                 'Request successful',
                 extra_tags='successful_request')
@@ -83,9 +87,10 @@ def edit_services(request, service_id):
 
     service = get_object_or_404(Service, id=service_id)
     if request.method == "POST" and request.user.is_superuser:
-        form = ServiceForm(request.POST, instance=service)
+        form = ServiceForm(request.POST, request.FILES, instance=service)
         context = {
-            'form': form
+            'form': form,
+            'service': service
         }
         if form.is_valid():
             form.save()
@@ -102,7 +107,8 @@ def edit_services(request, service_id):
             return render(request, 'services/edit_services.html', context)
     form = ServiceForm(instance=service)
     context = {
-        'form': form
+        'form': form,
+        'service': service
     }
     return render(request, 'services/edit_services.html', context)
 

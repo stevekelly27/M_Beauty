@@ -16,7 +16,7 @@
         <div class="fs-6 p-0 mb-0 pt-4">
             <div class="sign-up-container">
                 <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Add service</div>
-                    <form id="add-service" class="page-card-body" action="{% url 'add_services' %}" method="POST">
+                    <form id="add-service" class="page-card-body" action="{% url 'add_services' %}" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button class="btn action-btn mb-3 px-4" type="submit">Confirm</button>
