@@ -37,7 +37,7 @@ The site offers an inbuilt stock system to ensure users cannot buy things that a
 
 - As a site user I want to be able to view a site which is attractive yet informative so that I can gain an understanding of the sites purpose and navigation easily.
 - As a site user I want to be able to view salon service and price details so that I can clearly see what the salon can offer and the cost.
-- As a site user I want to be able to view a gallery of examples of past work completed so I can see the level of skill of the beautition.
+- As a site user I want to be able to have access to social media accounts relating to the business.
 
 
 ### Epic 5 - Admin
@@ -330,19 +330,46 @@ Stripe payments are still example payments, I will make it a future to be able t
 
 ## Bugs/Fixes
 
-## Testing 
+## Testing
+
+####  Testing User stories
+- Epic 1 - Registration and User Accounts
+    - I have tested registering an account 
+    - I have tested responsivenes of the register, login and logout pages.
+    - I have tested the recover password functionality and it passed.
+
+- Epic 2 - User Booking
+    - If the user is signed in they can access the bookings portal
+    - I have tested the view bookings functionality and it shows users booked appointments
+    - I have tested the cancel function, it passed and displays a success message.
+
+- Epic 3 - User Products
+    - Products page is clear, and visually appealing.
+    - Products detail page renders, and item quantity button increments and decrements the quantity.
+    - Once a product is added to the bag, a checkout success message appears with the bag details and a link to the checkout.Tested and passed.
+
+- Epic 4 - Site Navigation
+    - With a clear header and footer, the site allows ease of navigation for the user.
+    - The user can see the price list on the homepage and on the dedicated price list page.
+    - The social media links are in the footer, witch is attached to all pages of the site so they are not overlooked.
+
+- Admin
+    - Admin have the ability to create, read update and delete products from the front end of the website and works as expected.
+    - Admin have the ability to create, read update and delete services from the front end of the website and works as expected.
+    - Admin have the ability to create and cancel bookings from the front end of the website and works as expected.
+
+
 
 - I manually tested all features of this site to make sure it is a fully functioning ecommence platform.
 
-- I have tested all User Stories and all have passed.
-
 - I have done automated tests on some aspects of this project including the services and products.
 
-- Lighthouse tests
+- Lighthouse tests 
 
 - W3C Markup Validation
+Passed HTML validation
 
-- Browser Testing 
+- Browser Testing
 I have tested that this application worksusing a Macbook Pro, with macOS Ventura version 13.1 installed, using Safari, Google Chrome and Firefox browser
 
 
@@ -530,6 +557,9 @@ Used for overall development and tweaking, including testing responsiveness and 
 
 - ElephantSQL
 Used to host postgres URL
+
+- Mailchimp
+Used for newsletter subscription
 
 - Stripe
 Used to handle payments.

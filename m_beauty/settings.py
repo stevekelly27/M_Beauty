@@ -141,15 +141,6 @@ else:
         }
     }
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://cwqjrdrx:PyT8W1gU7T_D2RwKn5LEDn7drr-9d9Q-@manny.db.elephantsql.com/cwqjrdrx')
-# }
-
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://cwqjrdrx:PyT8W1gU7T_D2RwKn5LEDn7drr-9d9Q-@manny.db.elephantsql.com/cwqjrdrx')
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -228,7 +219,7 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-DEFAULT_FROM_EMAIL = 'skelly28test@gmail.com'
+# DEFAULT_FROM_EMAIL = 'skelly28test@gmail.com'
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
