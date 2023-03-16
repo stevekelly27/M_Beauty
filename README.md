@@ -327,6 +327,18 @@ It is disabled at the moment.
 - Stripe payments
 Stripe payments are still example payments, I will make it a future to be able to make real payments.
 
+- BookingFormAdmin
+I would like to on forms.py insert the paid field for admin to have control access on the frontend.
+
+- OrderLineItem
+I would like to implement a model to override save function to adjust post-order
+
+- Webhook handler
+A payment intent succeeded function to submit email confs.
+
+
+
+
 
 ## Bugs/Fixes
 
