@@ -1,6 +1,8 @@
 # M Beauty
 M Beauty is a B2C nail and beauty business located in Killarney. This business was stated up in 2020, and is a one woman operation that is very busy and this website should help with the day to day operations, being notified when a user makes a booking. 
 
+![18774EDC-871A-4460-B7CA-DBBE56B14F0E](https://user-images.githubusercontent.com/93382818/225476727-0100785c-0c74-45ca-81aa-f9f44aa4fc1f.jpeg)
+
 # UX
 
 ## Strategy 
@@ -323,10 +325,26 @@ All informaation about the business is in the social media accounts, including t
 It is disabled at the moment.
 
 - Stripe payments
-Stripe payments are still example payments, I will 
+Stripe payments are still example payments, I will make it a future to be able to make real payments.
 
 
 ## Bugs/Fixes
+
+## Testing 
+
+- I manually tested all features of this site to make sure it is a fully functioning ecommence platform.
+
+- I have tested all User Stories and all have passed.
+
+- I have done automated tests on some aspects of this project including the services and products.
+
+- Lighthouse tests
+
+- W3C Markup Validation
+
+- Browser Testing 
+I have tested that this application worksusing a Macbook Pro, with macOS Ventura version 13.1 installed, using Safari, Google Chrome and Firefox browser
+
 
 ## Deployment
 
@@ -475,10 +493,13 @@ Stripe payments are still example payments, I will
     - add commit and push to github
     - push to heroku with 'git push heroku main'
 
-## Technologies Used
+## Frameworks/ Libraries/ Technologies Used
 
 - Django
 Django was used as the python framework in the project.
+
+- Django-allauth
+Authentication library used to create the user accounts
 
 - HTML
 HTML was the base language used to lay out the skeleton of all templates.
@@ -498,8 +519,17 @@ Was used during development as a database to test models.
 - Bootstrap
 I am using bootstrap v4.4.1 and it was heavily implemented.
 
+- Crispy Forms
+Used to manage Django Forms
+
 - Font awesome
 Icons used in the navbar and footer.
+
+- Chrome Dev Tools
+Used for overall development and tweaking, including testing responsiveness and performance
+
+- ElephantSQL
+Used to host postgres URL
 
 - Stripe
 Used to handle payments.
@@ -510,4 +540,24 @@ Used to store static and media files.
 - Heroku
 Used as platform for final deployed version of the site.
 
+- W3C
+Used for HTML & CSS Validation
 
+
+## Credits 
+
+- W3Schools
+
+- Django Docs
+
+- Bootstrap 4.6 Docs
+
+- Stack Overflow
+
+- Code Institute - Boutique Ado Walkthrough Project
+
+- Stripe Documentation
+
+## Acknowledgments
+
+- I would like to acknowledge and thank brian and Freddie for code review and helpful ideas.

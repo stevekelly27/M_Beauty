@@ -16,17 +16,11 @@ class ProductFormTests(TestCase):
             'image': SimpleUploadedFile('test_image.jpg', b'content')
         }
 
-    # def test_valid_form(self):
-    #     form = ProductForm(data=self.valid_data)
-    #     self.assertTrue(form.is_valid())
-    #     product = form.save()
-    #     self.assertEqual(Product.objects.count(), 1)
-    #     self.assertEqual(product, Product.objects.first())
-
     def test_blank_data(self):
         form = ProductForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEqual(len(form.errors), 4) # name, price, and category are required
+        self.assertEqual(
+            len(form.errors), 4)  # name, price, and category are required
 
     def test_invalid_price(self):
         invalid_data = self.valid_data.copy()
@@ -37,7 +31,7 @@ class ProductFormTests(TestCase):
 
     def test_invalid_category(self):
         invalid_data = self.valid_data.copy()
-        invalid_data['category'] = 1000 # category ID that doesn't exist
+        invalid_data['category'] = 1000  # category ID that doesn't exist
         form = ProductForm(data=invalid_data)
         self.assertFalse(form.is_valid())
         self.assertIn('category', form.errors)

@@ -8,7 +8,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-        
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -36,7 +36,7 @@ class Product (models.Model):
             self.in_stock = False
         else:
             self.in_stock = True
-        
+
         super().save(*args, **kwargs)
 
     def __str__(self):

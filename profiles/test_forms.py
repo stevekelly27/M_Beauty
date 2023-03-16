@@ -44,31 +44,6 @@ class TestUserProfileForm(TestCase):
         form = UserProfileForm(data=data)
         self.assertTrue(form.is_valid())
 
-    # def test_form_invalid(self):
-    #     form_data = {
-    #         'default_phone_number': '123-456-7890',
-    #         'default_postcode': '12345',
-    #         'default_town_or_city': 'New York',
-    #         'default_street_address1': '123 Main St',
-    #         'default_country': 'US',
-    #     }
-    #     form = UserProfileForm(data=form_data)
-    #     self.assertFalse(form.is_valid())
-    #     self.assertEqual(
-    #         form.errors['default_town_or_city'],
-    #         ['This field is required.']
-    #     )
-    #     self.assertEqual(
-    #         form.errors['default_street_address1'],
-    #         ['This field is required.']
-    #     )
-    #     self.assertEqual(
-    #         form.errors['default_county'],
-    #         ['This field is required.']
-    #     )
-    #     if not form.is_valid():
-    #         print(form.errors)
-
     def test_form_placeholder_and_class_attributes(self):
         """
         Test that the form fields have the expected placeholder and class attributes
@@ -85,8 +60,11 @@ class TestUserProfileForm(TestCase):
         for field_name, placeholder in expected_placeholders.items():
             field = form.fields.get(field_name)
             self.assertIsNotNone(field)
-            self.assertEqual(field.widget.attrs.get('placeholder'), placeholder)
-            self.assertEqual(field.widget.attrs.get('class'), 'border-black rounded-0 profile-form-input')
+            self.assertEqual(
+                field.widget.attrs.get('placeholder'), placeholder)
+            self.assertEqual(
+                field.widget.attrs.get(
+                    'class'), 'border-black rounded-0 profile-form-input')
 
     def test_form_autofocus_attribute(self):
         """
@@ -96,4 +74,6 @@ class TestUserProfileForm(TestCase):
         expected_field_name = 'default_phone_number'
         expected_autofocus_value = True
         first_field = list(form.fields.values())[0]
-        self.assertEqual(first_field.widget.attrs.get('autofocus'), expected_autofocus_value)
+        self.assertEqual(
+            first_field.widget.attrs.get(
+                'autofocus'), expected_autofocus_value)

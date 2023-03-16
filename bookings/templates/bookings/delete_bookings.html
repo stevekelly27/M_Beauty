@@ -21,17 +21,17 @@
 <div class="container-fluid border-0 py-3 pt-0">
     <div class="card text-center border-0">
         <div class="form-container fs-6 p-0 mb-0 pt-4">
-          <div class="sign-up-container">
-            <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Cancel booking</div>
-              <form class="page-card-body" method="POST">
-                {% csrf_token %}
-                <p>Are you sure you want to cancel</p>
-                <p>{{ bookings.service }}</p>
-                <p>on {{ bookings.date }} at {{ bookings.get_time_display }}?</p>
-                <button class="btn action-btn mb-3 px-4" type="submit">Yes</button>
-                <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">No</a>
-              </form>
-          </div>
+            <div class="sign-up-container">
+                <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Cancel booking</div>
+                <form class="page-card-body" method="POST">
+                    {% csrf_token %}
+                    <p>Are you sure you want to cancel</p>
+                    <p>{{ bookings.service }}</p>
+                    <p>on {{ bookings.date }} at {{ bookings.get_time_display }}?</p>
+                    <button class="btn action-btn mb-3 px-4" type="submit">Yes</button>
+                    <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">No</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>

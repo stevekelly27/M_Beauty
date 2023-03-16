@@ -1,13 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-<style>
-    /*
-body > div.container-fluid.mt-auto {
-    padding-top: 215;
-}
-*/
-</style>
+
 {% endblock %}
 {% block page_header %}
     <div class="container header-container">
@@ -31,12 +25,12 @@ body > div.container-fluid.mt-auto {
         <div class="fs-6 p-0 mb-0 pt-4">
             <div class="sign-up-container">
                 <div class="card-header page-card-header h2 rounded-0 header-text mb-3">Make booking</div>
-                    <form class="flex-column" action="{% url 'add_bookings' %}" method="POST">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button class="btn action-btn mb-3 px-4" type="submit">Confirm</button>
-                        <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">Cancel</a>
-                    </form>
+                <form class="flex-column" action="{% url 'add_bookings' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn action-btn mb-3 px-4" type="submit">Confirm</button>
+                    <a href="{% url 'bookings' %}" class="btn action-btn mb-3 px-4 mx-2">Cancel</a>
+                </form>
             </div>
         </div>
     </div>

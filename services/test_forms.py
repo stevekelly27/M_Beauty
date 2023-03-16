@@ -16,7 +16,9 @@ class TestServiceForm(TestCase):
     def test_fields_are_explicit_in_metaclass(self):
         """Function to check whether specified form fields display."""
         form = ServiceForm()
-        self.assertEqual(form.Meta.fields, ['name', 'service_type', 'description', 'price', 'image'])
+        self.assertEqual(
+            form.Meta.fields, [
+                'name', 'service_type', 'description', 'price', 'image'])
 
     def test_service_name_is_required(self):
         """Function to check whether missed service name generates an error."""

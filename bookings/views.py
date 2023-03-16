@@ -58,7 +58,9 @@ def add_bookings(request):
             else:
                 messages.error(
                     request,
-                    'Request unsuccessful -sorry, this slot has been filled. Please choose another time.'
+                    'Request unsuccessful -sorry,'
+                    'this slot has been filled.'
+                    'Please choose another time.'
                     )
                 return render(request, 'bookings/add_bookings.html', context)
 
@@ -77,7 +79,8 @@ def add_bookings(request):
             else:
                 messages.error(
                     request,
-                    'Request unsuccessful - sorry, this slot has been filled. Please choose another time.',
+                    'Request unsuccessful - sorry,'
+                    'this slot has been filled. Please choose another time.',
                     extra_tags='unsuccessful_request'
                     )
                 return render(request, 'bookings/add_bookings.html', context)
@@ -92,6 +95,7 @@ def add_bookings(request):
         }
 
     return render(request, 'bookings/add_bookings.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def delete_bookings(request, booking_id):
@@ -117,11 +121,12 @@ def delete_bookings(request, booking_id):
         )
 
         time_threshould = timezone.now() - timedelta(minutes=30)
-        #https://stackoverflow.com/questions/1345827/how-do-i-find-the-time-difference-between-two-datetime-objects-in-python
+        # https://stackoverflow.com/questions/1345827/how-do-i-find-the-time-difference-between-two-datetime-objects-in-python
         difference = created - time_threshould
 
         seconds_in_day = 24 * 60 * 60
-        minutesdiff = divmod(difference.days * seconds_in_day + difference.seconds, 60)[0]
+        minutesdiff = divmod(
+            difference.days * seconds_in_day + difference.seconds, 60)[0]
         print("check", minutesdiff, paid)
 
         if (created.date() == timezone.now().date() or minutesdiff >= 0) and paid == False:

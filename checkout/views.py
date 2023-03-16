@@ -66,19 +66,23 @@ def checkout(request):
 
                     if product.name != 'Booking deposit':
                         if product.stock_level >= item_data:
-                            product.stock_level -= item_data       
+                            product.stock_level -= item_data
                             product.save()
                         else:
                             if product.stock_level <= 0:
-                                messages.error(request, (
-                                                        "Sorry, we are currently out of stock of {0}."
-                                                        "Please remove this item from your cart and try "
-                                                        "again later.").format(product.name))
+                                messages.error(
+                                    request, ("Sorry, we are currently out of stock of {0}."
+                                              "Please remove this item from your cart and try "
+                                              "again later.").format(
+                                                product.name))
+
                             else:
-                                messages.error(request, (
-                                                        "Sorry, we only have stock of {0} for {1}."
-                                                        "Please adjust/remove this item from your cart and try "
-                                                        "again later.").format(product.stock_level, product.name))
+                                messages.error(
+                                    request, ("Sorry, we only have stock of {0} for {1}."
+                                              "Please adjust/remove this item from your cart and try "
+                                              "again later.").format(
+                                                product.stock_level, product.name))
+
                             order.delete()
                             return redirect(reverse('view_bag'))
                     else:
@@ -93,33 +97,38 @@ def checkout(request):
                     order_line_item.save()
 
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                    messages.error(
+                        request, ("One of the products in your bag wasn't found in our database. "
+                                  "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             if bookings:
                 product = get_object_or_404(Product, name='Booking deposit')
-                bookingOLI = get_object_or_404(OrderLineItem, order=order, product=product)
+                bookingOLI = get_object_or_404(
+                    OrderLineItem, order=order, product=product)
                 qty = int(bookingOLI.quantity)
                 # https://stackoverflow.com/questions/34833000/django-change-the-value-of-a-field-for-all-objects-in-a-queryset
                 # https://docs.djangoproject.com/en/3.2/ref/models/querysets/#bulk-update
-                latest_booking = list(Booking.objects.filter(user=request.user).order_by('-id')[:qty])
+                latest_booking = list(
+                    Booking.objects.filter(
+                        user=request.user).order_by('-id')[:qty])
                 for lb in range(qty):
                     latest_booking[lb].paid = True
                 Booking.objects.bulk_update(latest_booking, ['paid'])
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -129,7 +138,7 @@ def checkout(request):
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
-        )      
+        )
 
         if request.user.is_authenticated:
             try:

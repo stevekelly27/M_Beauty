@@ -54,11 +54,15 @@ class BookingFormAdmin(forms.ModelForm):
         time = cleaned_data.get('time')
 
         try:
-            Booking.objects.get(date=cleaned_data['date'], time=cleaned_data['time'])
+            Booking.objects.get(
+                date=cleaned_data['date'], time=cleaned_data['time']
+                )
         except Booking.DoesNotExist:
             pass
         else:
-            raise forms.ValidationError('Booking for this date and time already exists')
+            raise forms.ValidationError(
+                'Booking for this date and time already exists'
+                )
 
         return cleaned_data  # or self.cleaned_data
 
@@ -107,10 +111,14 @@ class BookingForm(forms.ModelForm):
         time = cleaned_data.get('time')
 
         try:
-            Booking.objects.get(date=cleaned_data['date'], time=cleaned_data['time'])
+            Booking.objects.get(
+                date=cleaned_data['date'], time=cleaned_data['time']
+                )
         except Booking.DoesNotExist:
             pass
         else:
-            raise forms.ValidationError('Booking for this date and time already exists')
+            raise forms.ValidationError(
+                'Booking for this date and time already exists'
+                )
 
         return cleaned_data  # or self.cleaned_data

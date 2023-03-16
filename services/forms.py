@@ -3,6 +3,7 @@ from django import forms
 from .models import Service
 from products.widgets import CustomClearableFileInput
 
+
 class ServiceForm(forms.ModelForm):
     """
     Service form used to add services.
@@ -19,7 +20,8 @@ class ServiceForm(forms.ModelForm):
             'price': 'Price (€)'
         }
 
-        image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+        image = forms.ImageField(
+            label='Image', required=False, widget=CustomClearableFileInput)
 
     def clean_name(self):
         """

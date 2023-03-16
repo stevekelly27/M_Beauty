@@ -41,33 +41,30 @@
     {% endblock %}
 
     <title>M Beauty {% block extra_title %}{% endblock %}</title>
+    <meta name="description"
+          content="Nail salon in Killarney, book an appointment or browse our range of products" >
+    <meta name="keywords"
+          content="Nail salon, nails salon killarney, book nails, book eyebrows, manicure, shellac, gel nails
+                   gel nails killarney, beauty, beauty killarney, 5 star nails, henna eyebrows, brow lamination killarney,
+                   brow lamination">
   </head>
   <body>
   <header class="container-fluid fixed-top">
     <div id="topnav" class="row bg-white pt-lg-auto d-none d-lg-flex">
         <div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-left">
             <a href="{% url 'home' %}" class="main-logo-link">
-                <img src="{{ MEDIA_URL }}M-Beauty-logo.JPG" style="
+                <img src="{{ MEDIA_URL }}M-Beauty-logo.JPG" alt="m-beauty logo" style="
                                                     max-height: 100px;
                                                     height: 75%;
-                                                    width: 75%;
-                                                ">
+                                                    width: 75%;">
             </a>
         </div>
         <div class="links col-12 col-lg-5 offset-lg-1 my-0 py-1 py-lg-0">
-            <div class="d-flex justify-content-between align-items-start">
-               
-                    <a class="nav-link" href="">Contact</a>
-               
-               
+            <div class="d-flex justify-content-between align-items-start">      
+                    <a class="disabled nav-link" href="">Contact</a>  
                     <a class="nav-link" href="{% url 'products' %}">Products</a>
- 
-               
                     <a class="nav-link px-lg-0 px-xl-3 text-center" href="{% url 'price_list' %}">Price List</a>
- 
-                
                     <a class="nav-link" href="{% url 'services' %}">Services</a>
- 
             </div>
         </div>
         <div class="col-12 col-lg-4 my-0 py-1 py-lg-0">
@@ -76,8 +73,7 @@
                                                                                                     /* -webkit-transform: translateY(-10%); */ /* Safari &amp; Chrome */
                                                                                                     /* -moz-transform: translateY(-10%); */ /* Firefox */
                                                                                                     /* -ms-transform: translateY(-10%); */ /* Internet Explorer */
-                                                                                                    /* -o-transform: translateY(-10%); */ /* Opera */
-                                                                                                ">
+                                                                                                    /* -o-transform: translateY(-10%); */ /* Opera */">
                 <li class="list-inline-item dropdown">
                     <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
@@ -184,7 +180,7 @@
     </div>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
