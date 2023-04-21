@@ -48,6 +48,10 @@ def add_services(request):
     is displayed.
     """
 
+    if request.method == "GET":
+        if not request.user.is_staff:
+            return redirect(reverse('services'))
+
     if request.method == "POST" and request.user.is_superuser:
         form = ServiceForm(request.POST, request.FILES)
         context = {
@@ -84,6 +88,10 @@ def edit_services(request, service_id):
     the success message. If not valid, error message
     is displayed.
     """
+
+    if request.method == "GET":
+        if not request.user.is_staff:
+            return redirect(reverse('services'))
 
     service = get_object_or_404(Service, id=service_id)
     if request.method == "POST" and request.user.is_superuser:
@@ -122,6 +130,10 @@ def delete_services(request, service_id):
     returns the services page and displays success
     message on the services page.
     """
+
+    if request.method == "GET":
+        if not request.user.is_staff:
+            return redirect(reverse('services'))
 
     service = get_object_or_404(Service, id=service_id)
     if request.method == "POST" and request.user.is_superuser:
