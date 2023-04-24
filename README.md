@@ -338,6 +338,35 @@ A payment intent succeeded function to submit email confs.
 
 
 
+## Wireframes
+
+- Homepage
+
+![1B76A93E-CB61-4E5D-A4DB-D57F00A66F17_1_105_c](https://user-images.githubusercontent.com/93382818/233998788-7131d965-20d1-4e8a-9b69-4362c45e7dc1.jpeg)
+
+- Products page
+
+![4E63C4FE-F8E5-4067-ACBA-4F082CEA3058_1_105_c](https://user-images.githubusercontent.com/93382818/233999044-95ae960b-919b-4d6c-b7ef-1edecacecb85.jpeg)
+
+- Services page
+
+![DDF482CC-CC5A-441C-918D-0CCF691058D7_1_105_c](https://user-images.githubusercontent.com/93382818/233999142-00228dd8-ea0c-4a93-8fc1-03972479c907.jpeg)
+
+- Booking page
+
+![B489DAD7-C089-40B5-8012-F5BFC53AD0E6_1_105_c](https://user-images.githubusercontent.com/93382818/233999526-e04a15f8-6f87-4258-8315-614404b54d50.jpeg)
+
+- Booking form
+
+![84707839-E7EE-48E0-82D7-031478F10219_1_105_c](https://user-images.githubusercontent.com/93382818/233999611-1ec71bd3-a577-41c2-aa92-e368d685405a.jpeg)
+
+- Sign up page
+
+![18B675B1-4516-4F74-8192-A4FFD99A8718_1_105_c](https://user-images.githubusercontent.com/93382818/233999984-2f88a4a8-1b33-43d0-896d-aa1ab97c349e.jpeg)
+
+- Login page
+
+![9AF49696-E5B4-4EAB-84D5-3F0A68C44B57_1_105_c](https://user-images.githubusercontent.com/93382818/234000067-9078d6c2-926c-4dcc-bba7-b0257b419d81.jpeg)
 
 
 ## Bugs/Fixes
