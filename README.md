@@ -1,6 +1,18 @@
 # M Beauty
-M Beauty is a B2C nail and beauty business located in Killarney. This business was stated up in 2020, and is a one woman operation that is very busy and this website should help with the day to day operations, being notified when a user makes a booking. 
+M Beauty is a B2C nail and beauty business located in Killarney which offers a variety of services and sells handcreams directly to end customers. 
+This site aims to provide an easy-to-use interface where customers can browse through the skincare products, or can choose a service provided and make a booking.
 
+The site also offers an inbuilt stock system to ensure users cannot buy things that are not currently in stock. Once signed in, users can save an address to their profile for easy and convenient checkout.
+ 
+If a user makes a booking they can check the time and date of the booking once the user is signed through a view bookings link and can also cancel a booking.
+
+Admin also have the ability to make and cancel bookings, and cancel the bookings of any client with a future date booked.
+
+
+The Web Marketing strategies used include promoting beauty products with social media giveaways, and promoting services with special offers, with over 1300 followers Instagram  is her most popular platform while the business Facebook account has 800 followers.
+
+
+ 
 ![18774EDC-871A-4460-B7CA-DBBE56B14F0E](https://user-images.githubusercontent.com/93382818/225476727-0100785c-0c74-45ca-81aa-f9f44aa4fc1f.jpeg)
 
 # UX
@@ -15,38 +27,107 @@ The site offers an inbuilt stock system to ensure users cannot buy things that a
 
 ### Epic 1 - Registration and User Accounts
 
-- As a Site User I want to be able to register for an account so that I can save my personal details.
-- As a Site User I want to be able to easily login or logout at any time so that I can access my personal account information on different devices.
-- As a Site User I want to be able to recover my password so that I can regain access to my account in the event I lose my password.
+- User Story 1a - Registration
+
+As a Site User I want to be able to register for an account so that I can save my personal details.
+
+- User Story 1b - Login/Logout
+
+As a Site User I want to be able to easily login or logout at any time so that I can access my personal account information on different devices.
+
+-User Story 1c - Password Recovery
+
+As a Site User I want to be able to recover my password so that I can regain access to my account in the event I lose my password.
+
 
 ### Epic 2 - User Booking
 
-- As a site user I want to be able to create a user account so that I can login to make a booking.
-- As a site user I want to be able to view my bookings from my account so that I have proof that the booking was made.
-- As a site user I want to be able to cancel my bookings from my account so that I can free up my appointment slot for somebody else.
+- User Story 2a - Booking Accessibility
 
+As a site user I want to be able to create a user account so that I can login to make a booking.
+
+- User Story 2b - Booking Verification/Confirmation
+
+As a site user I want to be able to view my bookings from my account so that I have proof that the booking was made.
+
+- User Story 2c - Booking Cancellation
+
+As a site user I want to be able to cancel my bookings from my account so that I can free up my appointment slot for somebody else.
 
 ### Epic 3 - User Products
 
-- As a site user I want to view a list of clearly defined products so that I can browse freely.
-- As a site user I want to view individual product details so that I can get the full description, choose the quantity and add to cart.
-- As a site user I want to be able to see my shopping cart once I add a product to the cart for ease of navigation.
+- User Story 3a - Browsing Products
 
+As a site user I want to to view a list of clearly defined products so that I can browse freely.
+
+- User Story 3b - Product Detail
+
+As a site user I want to view individual product details so that I can get the full description, choose the quantity and add to cart.
+
+- User Story 3c - Adding Product to Bag
+
+As a site user I want to be able to see my shopping cart once I add a product to the cart for ease of navigation.
 
 ### Epic 4 - Site Navigation
 
-- As a site user I want to be able to view a site which is attractive yet informative so that I can gain an understanding of the sites purpose and navigation easily.
-- As a site user I want to be able to view salon service and price details so that I can clearly see what the salon can offer and the cost.
-- As a site user I want to be able to have access to social media accounts relating to the business.
+- User Story 4a - Linked Social Media
 
+As a site user I want to be able to have access to social media accounts relating to the business.
+
+- User Story 4b - Site Navigation
+
+As a site user I want to be able to view salon service and price details so that I can clearly see what the salon can offer and the cost.
+
+- User Story 4c - Site Layout
+
+As a site user I want to be able to view a site which is attractive yet informative so that I can gain an understanding of the sites purpose and navigation easily.
 
 ### Epic 5 - Admin
 
-- As admin I want to be able to read, add, edit and delete products from the front end in the website.
-- As admin I want to be able to read, add and cancel bookings from the front end in the website.
-- As admin I want to be able to see, add, update and delete services from the front end in the website
+- User Story 5a - Admin C.R.U.D Products
+
+As admin I want to be able to read, add, edit and delete products from the front end in the website.
+
+- User Story 5b - Admin C.R.U.D Bookings
+
+As admin I want to be able to read, add and cancel bookings from the front end in the website.
+
+- User Story 5c - Admin C.R.U.D Services
+
+As admin I want to be able to see, add, update and delete services from the front end in the website
 
 
+### Epic 6 - Shopping
+
+- User Story 6a - My Profile
+
+As a site user I want to be able to view my profile so that I can keep update/ save shipping details and previous purchases
+
+- User Story 6b - Shopping Bag
+
+As a site user I want to be able to add a product or service to a cart so that I can assess my bag and proceed to checkout.
+
+- User Story 6c - Checkout
+
+As a site user I want to be able to securely checkout so that I can complete my order
+
+
+### Epic 7 - Services
+
+- User Story 7a Services
+
+As a site user I want to to view a list of clearly defined services so that I can browse freely.
+
+
+### Epic 8 - SEO / Newsletter
+
+- User Story 8a - SEO
+
+As a site user I can find the site through web searches so that I can easily access the site
+
+- User Story 8b - Newsletter
+
+As a site user I can subscribe to the newsletter so that I can keep up with news and offers relating to the business.
 
 ## Features
 
@@ -316,6 +397,16 @@ All authentication templates are from the all-auth library
 - Logout 
 
 ![ACACC1DD-4884-4A86-9527-2F2BBDEF947B_4_5005_c](https://user-images.githubusercontent.com/93382818/225245908-4c97aa49-e8bb-47b3-b8ed-2ddfdc2d7c5a.jpeg)
+
+### Business Social Media
+
+- Facebook 
+
+![39CCE22D-A806-4CAE-8434-8D20F0AB92B3](https://user-images.githubusercontent.com/93382818/234246428-d649f1b7-5688-4c1b-9bca-c6b33b9c001e.jpeg)
+
+- Instagram
+
+![5A795E30-1442-4805-A265-906D9A99C741](https://user-images.githubusercontent.com/93382818/234246457-1ce3c8ae-c645-4b9b-bd46-96210f56b65a.jpeg)
 
 ## Future Features 
 
@@ -618,7 +709,7 @@ As a site user I can find the site through web searches so that I can easily acc
 
 
 User Story 8b - Newsletter
- 
+
 As a site user I can subscribe to the newsletter so that I can keep up with news and offers relating to the business.
 |Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
 |-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|

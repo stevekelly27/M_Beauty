@@ -11,8 +11,3 @@ def index(request):
 def price_list(request):
     """ A view to return the price-list page """
     return render(request, 'home/price_list.html')
-
-
-def contact(request):
-    """ A view to return the contact page """
-    return render(request, 'home/contact.html')
