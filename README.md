@@ -373,39 +373,259 @@ A payment intent succeeded function to submit email confs.
 
 ## Testing
 
-####  Testing User stories
-- Epic 1 - Registration and User Accounts
-    - I have tested registering an account 
-    - I have tested responsivenes of the register, login and logout pages.
-    - I have tested the recover password functionality and it passed.
-
-- Epic 2 - User Booking
-    - If the user is signed in they can access the bookings portal
-    - I have tested the view bookings functionality and it shows users booked appointments
-    - I have tested the cancel function, it passed and displays a success message.
-
-- Epic 3 - User Products
-    - Products page is clear, and visually appealing.
-    - Products detail page renders, and item quantity button increments and decrements the quantity.
-    - Once a product is added to the bag, a checkout success message appears with the bag details and a link to the checkout.Tested and passed.
-
-- Epic 4 - Site Navigation
-    - With a clear header and footer, the site allows ease of navigation for the user.
-    - The user can see the price list on the homepage and on the dedicated price list page.
-    - The social media links are in the footer, witch is attached to all pages of the site so they are not overlooked.
-
-- Admin
-    - Admin have the ability to create, read update and delete products from the front end of the website and works as expected.
-    - Admin have the ability to create, read update and delete services from the front end of the website and works as expected.
-    - Admin have the ability to create and cancel bookings from the front end of the website and works as expected.
+###  Testing User stories
 
 
+Epic 1 - Registration and User Accounts
 
-- I manually tested all features of this site to make sure it is a fully functioning ecommence platform.
+User Story 1a - Registration
 
-- I have done automated tests on some aspects of this project including the services and products.
+As a Site User I want to be able to register for an account so that I can save my personal details.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|To register, a user must enter an email address , a username and a password|Enter an email adderss, username and password|User is logged in|Pass                                     |
+|A user should not be able to login unless they have completed the registration|Try to login to an unregistered account|Access to site is denied|Pass|
+|A user should not be able to register the same username or email address more than once  |Try to regiter with an email address already in use|Access to site is denied|Fail|
+|A confirmation email should arrive on user email address to confirm the registration.|Register and check email.|A verification email|Pass|
+|At the email content, a URL link to redirect page on website should appear for user to be registered on db and be able to login|Click the link in the email|The email is verified and the account is saved|Pass|
 
-- Lighthouse tests 
+<br>
+
+
+User Story 1b - Login/Logout
+
+As a Site User I want to be able to easily login or logout at any time so that I can access my personal account information on different devices.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|The My Account dropdown menu should display if the user is logged in or out by displaying a link to the alternate option.|Once logged in go to My Account|To see logout|Pass|
+|The My Account dropdown menu should display a My profile link to access personal information.|Once logged in go to My Account|To see a link to My Profile|Pass|
+
+<br>
+
+
+User Story 1c - Password Recovery
+
+As a Site User I want to be able to recover my password so that I can regain access to my account in the event I lose my password.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A "forgot password" link should be available to the user on the log in screen|Go to the login page|Under the login area there should be a link for 'Forgot password?'|Pass|
+|The user should be prompted to enter an email address when they click on the forgot password link.|Click the link on the login page for 'Forgot Password?'|The user is redirected to the forgot password page and it requires an email address|Pass|
+|An email will be sent to the entered email address providing the user with a link to use to reset their password.|Enter the email address provided for registration|An email should be sent to the registered email address with a link to reset password|Pass|
+
+<br>
+
+
+
+Epic 2 - User Booking
+User Story 2a - Booking Accessibility 
+
+As a site user I want to be able to create a user account so that I can login to make a booking.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A user must be logged in to make a booking.|Try to click the book now link on a service|The user is redirected to the login page|Pass|
+
+<br>
+
+User Story 2b - Booking Verification/Confirmation
+
+As a site user I want to be able to view my bookings from my account so that I have proof that the booking was made.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|The user account is set up so users can view all of their past and upcoming bookings if they are logged into their account.|If the user is logged in visit the bookings page and click view bookings|Allfuture and passed bookings should be available to view|Pass|
+|Booking details must include; date, time, and service details.?click the view bookings link on the bookings page|the clients booking should contain the date, time, and service details|Pass
+
+<br>
+
+User Story 2c - Booking Cancellation
+
+As a site user I want to be able to cancel my bookings from my account so that I can free up my appointment slot for somebody else.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|Users can cancel details of an upcoming booking through the click of a "Cancel" button from their user account profile or bookings page.|Click the cancel link|The booking to be deleted|Pass|
+|Users are given the option to confirm a deletion before an appointment is deleted.|Click the cancel link|to be taken to the cancel bookings page to confirm cancellation|Pass|
+|Users cannot delete a past booking.|Click view booings on the bookings page|If the booking is in the past there is no option to cancel|Pass|
+
+<br>
+
+
+User Story 3a - Browsing Products
+
+As a site user I want to to view a list of clearly defined products so that I can browse freely.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A user can clearly see a list of products available for sale.|Go to the products page|To see a list of products available|Pass|
+|A stock level should be visible to let the user know if the product is available.|Go to the products page|Under each product should have a stock level|Pass|
+|A price should be visible under all products.||Go to the products page|Under each product should have a price|Pass|
+
+<br>
+
+
+User Story 3b - Product Detail
+
+As a site user I want to view individual product details so that I can get the full description, choose the quantity and add to cart.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A user should be able to view the view the full product description.|Click on a product|User should be taken to the product detail page and view the full product description|Pass|
+|A user should be able to toggle the quantity of the product.|On the product detail page click the + or - to toggle quantity|Quantity should change accordingly|Pass|
+|A user should be able to add a product to the cart.|Click add to bag link on product detail page|The item should be added to the cart|Pass|
+|A User should not be able to enter more amount than the availability of the product in stock.|Try to increase the quantity to more than is in stock|The quantity should not be able to go higher than what is in stock|Pass|
+
+<br>
+
+
+User Story 3c - Adding Product to Bag
+
+As a site user I want to be able to see my shopping cart once I add a product to the cart for ease of navigation.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|As a user adds a product to the cart, a pop-up of the users bag should appear in the top right corner.|Click add to bag link on product detail page|A pop-up of the cary summary to appear|Pass|
+|there must be a button/link to take the user to secure checkout.|Click add to bag link on product detail page|On the pop up tere should be a link to go to secure checkout|Pass|
+
+<br>
+
+
+User Story 4a - Linked Social Media
+
+As a site user I want to be able to have access to social media accounts relating to the business.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|The user should have access to linked social media accounts from all pages and on all screen sizes.|Go to all pages on the site|To see the social media links in the footer of all pages.|Pass|
+|The user dose not have to be logged in to view the social media pages.|As a logged out user click on the social media links|The user should be taken to the business social media|Pass|
+
+<br>
+
+
+User Story 4b - Site Navigation
+
+As a site user I want to be able to view salon service and price details so that I can clearly see what the salon can offer and the cost.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|The user should have information on what services are provided from the home page.|GO to homepage|A list of services offered and prices are avalible|Pass|
+|The user should be aware of the pricing and offers from the homepage.|Go to homepage|The pricelist is avalible from the homepage|Pass|
+
+<br>
+
+User Story 4c - Site Layout
+
+As a site user I want to be able to view a site which is attractive yet informative so that I can gain an understanding of the sites purpose and navigation easily.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|There should be clear links to all pages of the site from the home page.|Go to homepage|There should be links for products, services and the pricelist in trhe headder|Pass|
+|The user should have information of what the site is about and where to find more information, ie; social media links.|
+
+<br>
+
+
+User Story 5a - Admin C.R.U.D Products
+
+As admin I want to be able to read, add, edit and delete products from the front end in the website.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A link to add a product is only visible to admin users on the products page.|Go to the products page|There should be a link to add a product only visible to admin which redirects you to the add prodct form|Pass|
+|A link to edit a product is only visible to admin users on the product detail page.|Go to the product detail page and click edit link|The edit link takes you to the pre-filled form of the product|Pass|
+|A link to delete a product is only visible to admin users on the product detail page.|Go to the product detail page and click the delete link|There should be a delete link that will take you to the delete page to comfirm deletion and deletes product if confirmed|Pass|
+
+<br>
+
+
+User Story 5b - Admin C.R.U.D Bookings
+
+As admin I want to be able to read, add and cancel bookings from the front end in the website.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|Admin users should be able to use the booking form to add a booking|Logged in as admin make a booking|The booking is confirmed and added to the view bookings list|Pass|
+|Admin users should be able to cancel any upcoming booking from the booking page for any client.|Logged in as admin go to the view bookings and cancel an upcoming booking for a different user|Booking should be cancelled|Pass|
+
+
+<br>
+
+
+User Story 5c - Admin C.R.U.D Services
+
+As admin I want to be able to see, add, update and delete services from the front end in the website
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|Admin users should be able to add a new service to the services page.|Logged in as admin go to the services page and click add service|Admin is redirected to the add service form which creates a new service|Pass|
+|Admin users should be able to update any service in the services page.|Logged in as admin go to the services page and click update|Admin should be redirected to the pre-filled add service form and will update if changed|Pass|
+|Admin users should be able to delete any service from the services page.|Logged in as admin go to the services page and click delete|Admin should be redirected to the delete service confirmation page and will delete the service if confirmed|Pass|
+
+
+<br>
+
+
+
+User Story 6a - My Profile
+
+As a site user I want to be able to view my profile so that I can keep update/ save shipping details and previous purchases
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|Once a user buys a product/service the delivery information should be saved to the My Profile page.|As a user purchace a product|The delivery details should be saved to the My Profile page.|Pass|
+|A users order history should appear if a product is purchased.|As a user purchace a product|An order history should appear in the My Profile page|Pass|
+
+<br>
+
+
+User Story 6b - Shopping Bag
+
+As a site user I want to be able to add a product or service to a cart so that I can assess my bag and proceed to checkout.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A list of any items added to the cart by the user.|Add multiple products and a service in to the shopping bag|There is a list of the products and service containing info, price, quantity and subtotal|Pass|
+|A user should be able to update the quantity or delete an item from the cart.|Increase the quantity and update the bag and the subtotal will increase accordingly and if remove is clicked the product/service from the bag|Pass|
+|A user should be able to go to secure checkout if happy|Click Secure Checkout in the shopping bag|The user should be redirected to the checkout page.|Pass|
+|A User to be able to quickly navigate back to the list of products by having a Keep Shopping button.|Click the Keep Shopping link in the shopping bag|The user is redirected to the products page|Pass|
+
+
+<br>
+
+
+User Story 6c - Checkout
+
+As a site user I want to be able to securely checkout so that I can complete my order
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|If a user has delivery info saved it should be pre-filled on checkout|Purchase a product then add another product to the bag and do to the checkout|The users delivery information from the previous purchase is pre-filled.|Pass|
+|An order summary showing subtotal, delivery and grand total.|Add multiple products to the bag and go to the checkout.|All of the products should be in a list showing the subtotal and delivery charge and should calculate it into a grand total.|Pass|
+|Implement a stripe payment system|Purchase a product or a service|The payment should go through but have webhooks in place on case of unexpected events|Pass|
+|A user should be able to get back to the previous page to adjust bag|Go to checkout with a product or service|There should be an link to adjust your bag in case of a mistake|Pass|
+
+<br>
+
+
+User Story 7a Services
+
+As a site user I want to to view a list of clearly defined services so that I can browse freely.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|A user can clearly see a list of services available.|Go to the services page|A list of the services clearly defined|Pass|
+|A price should be visible under all services.|Go to the services page|A price should be clearly defined under each service|Pass|
+|A description should be under each service.|Go to the services page|The service should have a brief description of what is entailed|Pass|
+
+
+<br>
+
+
+User Story 8a - SEO
+
+As a site user I can find the site through web searches so that I can easily access the site
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+|SEO added through the use of informative alt tags, "description" and "keyword" meta tags in the html|Check HTML for good SEO practice|Informative alt tags for pictures avoiding duplicate content.|Pass|
+|SEO added through appropriate site title and home page content|Check HTML for good SEO practice|Including keywords that will help the google algorithm suggest this site|Pass|
+|Create a sitemap.xml and robots.txt file|
+
+<br>
+
+
+User Story 8b - Newsletter
+ 
+As a site user I can subscribe to the newsletter so that I can keep up with news and offers relating to the business.
+|Acceptance criteria                |Test Action                           |Expected Outcome                         |Test Outcome                             |
+|-----------------------------------|--------------------------------------|-----------------------------------------|-----------------------------------------|
+User should be able to enter an email address to sign up to the site newsletter managed via mailchimp|Enter email address|To subscribe to the business mialing list|Fail - working but not functional
+
+<br>
+
 
 - W3C Markup Validation
 Passed HTML validation
